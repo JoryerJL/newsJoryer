@@ -1,0 +1,103 @@
+name: Bug report
+description: Report a reproducible problem in the project.
+title: "fix: "
+labels:
+  - bug
+  - status:needs-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug. Please complete every required field.
+        A maintainer must add `status:approved` before a pull request may be opened.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I have searched existing issues and this is not a duplicate.
+          required: true
+        - label: I understand this issue requires `status:approved` before a pull request may be opened.
+          required: true
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug description
+      description: Clearly describe the observed problem.
+      placeholder: Explain what is failing and who or what is affected.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest numbered sequence that consistently reproduces the issue.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: Describe what should have happened.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: Describe what happened, including relevant error messages.
+    validations:
+      required: true
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Ubuntu
+        - Other Linux
+        - Windows
+        - WSL
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: agent-client
+    attributes:
+      label: Agent or client
+      options:
+        - Claude Code
+        - OpenCode
+        - Gemini CLI
+        - Cursor
+        - Windsurf
+        - Codex
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: shell
+    attributes:
+      label: Shell
+      options:
+        - bash
+        - zsh
+        - fish
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: relevant-logs
+    attributes:
+      label: Relevant logs
+      description: Paste sanitized logs or stack traces if available.
+      render: shell
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add screenshots, workarounds, or other useful context.
