@@ -1,0 +1,18 @@
+{% comment %}
+Inline alert.
+Expects: message
+Optional: title, tone (info|success|warning|danger)
+{% endcomment %}
+{% with tone=tone|default:"info" %}
+<div
+  role="status"
+  class="rounded-lg border px-4 py-3 text-body-sm
+    {% if tone == 'success' %}border-accent-700/20 bg-success-50 text-success-700
+    {% elif tone == 'warning' %}border-warning-700/20 bg-warning-50 text-warning-700
+    {% elif tone == 'danger' %}border-danger-700/20 bg-danger-50 text-danger-700
+    {% else %}border-brand-100 bg-info-50 text-info-700{% endif %}"
+>
+  {% if title %}<p class="font-semibold">{{ title }}</p>{% endif %}
+  <p {% if title %}class="mt-1"{% endif %}>{{ message }}</p>
+</div>
+{% endwith %}

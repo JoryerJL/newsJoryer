@@ -1,0 +1,58 @@
+name: Feature request
+description: Propose an improvement or new capability.
+title: "feat: "
+labels:
+  - enhancement
+  - status:needs-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing an improvement. Please complete every required field.
+        A maintainer must add `status:approved` before a pull request may be opened.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I have searched existing issues and this is not a duplicate.
+          required: true
+        - label: I understand this issue requires `status:approved` before a pull request may be opened.
+          required: true
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem description
+      description: Describe the user or maintainer pain point this request addresses.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution
+      description: Describe how this should work from the user's perspective.
+    validations:
+      required: true
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: Affected area
+      options:
+        - Scripts
+        - Skills
+        - Examples
+        - Documentation
+        - CI/Workflows
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives-considered
+    attributes:
+      label: Alternatives considered
+      description: Describe alternatives, workarounds, or why they are insufficient.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add mockups, examples, references, or other useful context.

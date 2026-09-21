@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@source "../../templates";
+@source "../../apps";
+
+@theme {
+  --color-brand-50: #eef4f8;
+  --color-brand-100: #c8d8e4;
+  --color-brand-500: #4a8496;
+  --color-brand-700: #2b6777;
+  --color-brand-900: #1f4d59;
+  --color-accent-100: #e7f4f0;
+  --color-accent-500: #52ab98;
+  --color-accent-700: #3a7d6f;
+  --color-ink-400: #9aacb5;
+  --color-ink-600: #5a7784;
+  --color-ink-900: #1a2e35;
+  --color-line: #dfe6ea;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f2f2f2;
+  --color-success-50: #e7f4f0;
+  --color-success-700: #2a5d52;
+  --color-warning-50: #fdf4e3;
+  --color-warning-700: #8a5a00;
+  --color-danger-50: #fdecea;
+  --color-danger-700: #c0392b;
+  --color-danger-900: #8e2a20;
+  --color-info-50: #eef4f8;
+  --color-info-700: #2b6777;
+  --color-status-published-fg: #2a5d52;
+  --color-status-blocked-fg: #8e2a20;
+
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --text-display: 3rem;
+  --text-display--line-height: 1.1;
+  --text-h1: 2.25rem;
+  --text-h1--line-height: 1.2;
+  --text-h2: 1.75rem;
+  --text-h2--line-height: 1.25;
+  --text-h3: 1.375rem;
+  --text-h3--line-height: 1.3;
+  --text-h4: 1.125rem;
+  --text-h4--line-height: 1.4;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.7;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.5;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+  --text-overline: 0.75rem;
+  --text-overline--line-height: 1.4;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgb(26 46 53 / 6%);
+  --shadow-md: 0 4px 12px rgb(26 46 53 / 8%);
+  --shadow-lg: 0 12px 32px rgb(26 46 53 / 12%);
+  --shadow-focus: 0 0 0 3px rgb(43 103 119 / 35%);
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+
+  --z-index-base: 0;
+  --z-index-sticky: 10;
+  --z-index-dropdown: 20;
+  --z-index-overlay: 30;
+  --z-index-modal: 40;
+  --z-index-toast: 50;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-alt font-body text-body text-ink-900 antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2b6777;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-family: var(--font-display);
+    font-size: var(--text-display);
+    line-height: var(--text-display--line-height);
+    font-weight: 700;
+  }
+
+  .text-h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-h1);
+    line-height: var(--text-h1--line-height);
+    font-weight: 700;
+  }
+
+  .text-h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    line-height: var(--text-h2--line-height);
+    font-weight: 600;
+  }
+
+  .text-h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    line-height: var(--text-h3--line-height);
+    font-weight: 600;
+  }
+
+  .text-h4 {
+    font-family: var(--font-body);
+    font-size: var(--text-h4);
+    line-height: var(--text-h4--line-height);
+    font-weight: 600;
+  }
+
+  .text-overline {
+    font-size: var(--text-overline);
+    line-height: var(--text-overline--line-height);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .shadow-focus {
+    box-shadow: var(--shadow-focus);
+  }
+}

@@ -1,0 +1,35 @@
+{% comment %}
+Reusable button/link.
+Expects: label
+Optional: href, type (button|submit), variant (primary|secondary|tertiary|success|danger),
+          size (sm|md|lg), extra_class, attrs
+{% endcomment %}
+{% with variant=variant|default:"primary" size=size|default:"md" %}
+{% if href %}
+<a
+  href="{{ href }}"
+  class="inline-flex items-center justify-center gap-2 font-semibold transition
+    {% if size == 'sm' %}h-8 px-3 text-body-sm{% elif size == 'lg' %}h-12 px-6 text-body{% else %}h-10 px-4 text-body{% endif %}
+    {% if variant == 'secondary' %}rounded-md border border-brand-700 bg-transparent text-brand-700 hover:bg-brand-50
+    {% elif variant == 'tertiary' %}rounded-md bg-transparent text-brand-700 hover:bg-brand-50
+    {% elif variant == 'success' %}rounded-md bg-accent-700 text-white hover:bg-[#2f6659]
+    {% elif variant == 'danger' %}rounded-md bg-danger-700 text-white hover:bg-[#a03025]
+    {% else %}rounded-md bg-brand-700 text-white hover:bg-brand-900{% endif %}
+    {{ extra_class }}"
+  {{ attrs }}
+>{{ label }}</a>
+{% else %}
+<button
+  type="{{ type|default:'button' }}"
+  class="inline-flex items-center justify-center gap-2 font-semibold transition
+    {% if size == 'sm' %}h-8 px-3 text-body-sm{% elif size == 'lg' %}h-12 px-6 text-body{% else %}h-10 px-4 text-body{% endif %}
+    {% if variant == 'secondary' %}rounded-md border border-brand-700 bg-transparent text-brand-700 hover:bg-brand-50
+    {% elif variant == 'tertiary' %}rounded-md bg-transparent text-brand-700 hover:bg-brand-50
+    {% elif variant == 'success' %}rounded-md bg-accent-700 text-white hover:bg-[#2f6659]
+    {% elif variant == 'danger' %}rounded-md bg-danger-700 text-white hover:bg-[#a03025]
+    {% else %}rounded-md bg-brand-700 text-white hover:bg-brand-900{% endif %}
+    {{ extra_class }}"
+  {{ attrs }}
+>{{ label }}</button>
+{% endif %}
+{% endwith %}

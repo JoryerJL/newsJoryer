@@ -1,0 +1,12 @@
+{% extends "panel_base.html" %}
+
+{% block title %}Panel | CANACO SERVYTUR Villahermosa{% endblock %}
+
+{% block page_title %}Panel editorial{% endblock %}
+
+{% block panel_content %}
+{% include "components/alert.html" with tone="info" title="Cascarón C0" message="Las herramientas administrativas se habilitarán en fases posteriores." %}
+<p class="mt-6 max-w-2xl text-body text-ink-600">
+  Este layout fija navbar, sidebar de 240 px y área de contenido según UI_UX_SPEC §3.2.
+</p>
+{% endblock %}

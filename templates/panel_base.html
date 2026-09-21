@@ -1,0 +1,113 @@
+{% load static %}
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Panel | CANACO SERVYTUR Villahermosa{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="min-h-screen bg-surface-alt text-ink-900">
+  <a
+    href="#contenido-panel"
+    class="sr-only focus:absolute focus:left-4 focus:top-4 focus:z-toast focus:rounded-md focus:bg-surface focus:px-4 focus:py-2 focus:text-brand-700"
+  >Saltar al contenido</a>
+
+  <header class="sticky top-0 z-sticky border-b border-line bg-surface">
+    <div class="flex h-16 items-center justify-between gap-4 px-4 md:px-6">
+      <div class="flex items-center gap-3">
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-md text-brand-700 hover:bg-brand-50 lg:hidden"
+          data-panel-menu-open
+          aria-expanded="false"
+          aria-controls="menu-panel-movil"
+          aria-label="Abrir menú del panel"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a class="flex items-center gap-3" href="{% url 'panel' %}">
+          <span
+            class="inline-block h-10 w-[120px] shrink-0 rounded-sm bg-brand-100"
+            data-logo-slot
+            aria-hidden="true"
+          ></span>
+          <span class="font-display text-lg font-bold text-brand-700">Panel editorial</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a class="rounded-md px-3 py-2 text-body-sm font-semibold text-brand-700 hover:bg-brand-50" href="{% url 'home' %}">
+          Ver sitio público
+        </a>
+        <div class="hidden items-center gap-2 sm:flex" aria-hidden="true">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-100 text-caption font-semibold text-brand-900">ED</span>
+          <span class="text-body-sm font-semibold text-ink-900">Editor</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="fixed inset-0 z-overlay hidden bg-ink-900/50 lg:hidden" data-panel-menu-overlay></div>
+
+  <div class="mx-auto flex min-h-[calc(100vh-4rem)] max-w-[1440px]">
+    <aside
+      id="menu-panel-movil"
+      class="fixed inset-y-0 left-0 z-modal flex w-60 -translate-x-full flex-col border-r border-line bg-surface pt-16 shadow-lg transition-transform duration-200 lg:static lg:z-base lg:translate-x-0 lg:pt-0 lg:shadow-none"
+      data-panel-menu
+      data-drawer-desktop-mq="(min-width: 1024px)"
+      aria-label="Navegación del panel"
+      aria-hidden="true"
+      inert
+    >
+      <div class="flex items-center justify-between border-b border-line px-5 py-5 lg:hidden">
+        <p class="font-semibold text-brand-900">Navegación</p>
+        <button type="button" class="rounded-md p-2 text-brand-700 hover:bg-brand-50" data-panel-menu-close aria-label="Cerrar menú">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+
+      <div class="border-b border-line px-5 py-5">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-body-sm font-semibold text-brand-900">ED</span>
+          <div>
+            <p class="text-body-sm font-semibold text-ink-900">Editor de prueba</p>
+            {% include "components/badge.html" with label="Editor" status="category" %}
+          </div>
+        </div>
+      </div>
+
+      <nav class="flex flex-1 flex-col gap-1 px-2 py-4" aria-label="Secciones del panel">
+        <a class="flex h-11 items-center rounded-md border-l-[3px] border-brand-700 bg-brand-100 px-4 text-body font-semibold text-brand-900" href="{% url 'panel' %}" aria-current="page">Dashboard</a>
+        <a class="flex h-11 items-center rounded-md px-4 text-body text-ink-900 hover:bg-brand-50 hover:text-brand-700" href="{% url 'panel' %}">Mi perfil</a>
+        <a class="flex h-11 items-center rounded-md px-4 text-body text-ink-900 hover:bg-brand-50 hover:text-brand-700" href="{% url 'panel' %}">Noticias</a>
+        <a class="flex h-11 items-center rounded-md px-4 text-body text-ink-900 hover:bg-brand-50 hover:text-brand-700" href="{% url 'panel' %}">Comentarios</a>
+        <a class="flex h-11 items-center rounded-md px-4 text-body text-ink-900 hover:bg-brand-50 hover:text-brand-700" href="{% url 'panel' %}">Categorías</a>
+        <a class="flex h-11 items-center rounded-md px-4 text-body text-ink-900 hover:bg-brand-50 hover:text-brand-700" href="{% url 'panel' %}">Departamentos</a>
+        <a class="flex h-11 items-center rounded-md px-4 text-body text-ink-900 hover:bg-brand-50 hover:text-brand-700" href="{% url 'panel' %}">Usuarios</a>
+        <a class="flex h-11 items-center rounded-md px-4 text-body text-ink-900 hover:bg-brand-50 hover:text-brand-700" href="{% url 'panel' %}">Cambiar contraseña</a>
+      </nav>
+
+      <div class="mt-auto border-t border-line p-2">
+        <a class="flex h-11 items-center rounded-md px-4 text-body font-semibold text-danger-700 hover:bg-danger-50" href="{% url 'home' %}">Cerrar sesión</a>
+      </div>
+    </aside>
+
+    <div class="flex min-w-0 flex-1 flex-col">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-line bg-surface px-4 py-5 md:px-8">
+        <div>
+          {% block breadcrumbs %}{% endblock %}
+          <h1 class="text-h2 text-ink-900">{% block page_title %}Panel editorial{% endblock %}</h1>
+        </div>
+        <div>{% block page_actions %}{% endblock %}</div>
+      </div>
+      <main id="contenido-panel" class="flex-1 px-4 py-6 md:px-8 md:py-8">
+        {% block panel_content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+
+  <script src="{% static 'js/site.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
