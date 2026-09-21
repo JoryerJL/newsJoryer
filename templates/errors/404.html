@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}404 | CANACO SERVYTUR Villahermosa{% endblock %}
+
+{% block content %}
+<section class="relative mx-auto max-w-[520px] overflow-hidden rounded-xl bg-surface p-8 text-center shadow-md">
+  <span class="pointer-events-none absolute inset-x-0 top-4 select-none text-display text-brand-100" aria-hidden="true">404</span>
+  <div class="relative pt-16">
+    <svg class="mx-auto text-ink-400" width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true">
+      <rect x="20" y="16" width="48" height="64" rx="6" stroke="currentColor" stroke-width="4"/>
+      <path d="M32 36h24M32 48h24M32 60h12" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="66" cy="66" r="14" fill="white" stroke="currentColor" stroke-width="4"/>
+      <path d="m76 76 8 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <h1 class="mt-6 text-h1">Página no encontrada</h1>
+    <p class="mt-4 text-body text-ink-600">La noticia que buscas no existe o fue retirada.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      {% url 'home' as home_url %}
+      {% include "components/button.html" with label="Volver al inicio" href=home_url variant="primary" %}
+      {% include "components/button.html" with label="Ver todas las noticias" href=home_url variant="secondary" %}
+    </div>
+  </div>
+</section>
+{% endblock %}

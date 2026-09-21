@@ -1,0 +1,19 @@
+{% comment %}
+Pagination shell for later list screens.
+Optional: page_obj with has_previous/has_next/number/paginator
+{% endcomment %}
+{% if page_obj %}
+<nav class="mt-8 flex items-center justify-center gap-2" aria-label="Paginación">
+  {% if page_obj.has_previous %}
+    <a class="inline-flex h-9 w-9 items-center justify-center rounded-md text-brand-700 hover:bg-brand-50" href="?page={{ page_obj.previous_page_number }}" aria-label="Anterior">‹</a>
+  {% else %}
+    <span class="inline-flex h-9 w-9 items-center justify-center rounded-md text-ink-400" aria-disabled="true">‹</span>
+  {% endif %}
+  <span class="inline-flex h-9 min-w-9 items-center justify-center rounded-md bg-brand-700 px-2 text-body-sm font-semibold text-white" aria-current="page">{{ page_obj.number }}</span>
+  {% if page_obj.has_next %}
+    <a class="inline-flex h-9 w-9 items-center justify-center rounded-md text-brand-700 hover:bg-brand-50" href="?page={{ page_obj.next_page_number }}" aria-label="Siguiente">›</a>
+  {% else %}
+    <span class="inline-flex h-9 w-9 items-center justify-center rounded-md text-ink-400" aria-disabled="true">›</span>
+  {% endif %}
+</nav>
+{% endif %}

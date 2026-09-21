@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}500 | CANACO SERVYTUR Villahermosa{% endblock %}
+
+{% block content %}
+<section class="relative mx-auto max-w-[520px] overflow-hidden rounded-xl bg-surface p-8 text-center shadow-md">
+  <span class="pointer-events-none absolute inset-x-0 top-4 select-none text-display text-brand-100" aria-hidden="true">500</span>
+  <div class="relative pt-16">
+    <svg class="mx-auto text-danger-700" width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true">
+      <path d="M48 14 84 78H12L48 14z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M48 38v22" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="48" cy="68" r="3" fill="currentColor"/>
+    </svg>
+    <h1 class="mt-6 text-h1">Algo salió mal</h1>
+    <p class="mt-4 text-body text-ink-600">Ocurrió un error inesperado. Intenta de nuevo en unos minutos.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      {% url 'home' as home_url %}
+      {% include "components/button.html" with label="Volver al inicio" href=home_url variant="primary" %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -46,19 +46,19 @@ roadmap checkpoint
       ↓
 [1] Kiro: spec SDD detallado
       ↓
-[2] Codex: plan QA funcional para Antigravity
+[2] Codex / Terra / medium: backend + pruebas backend
       ↓
-[3] Codex: backend + pruebas backend
+[3] Cursor: frontend integrado con backend
       ↓
-[4] Cursor: frontend integrado con backend
+[4] Codex / Terra / medium: plan QA funcional del producto integrado
       ↓
 [5] Antigravity: QA funcional Playwright/Chromium
       ↓
   ¿QA aprobó?
-   ├─ no → [6] corrección por dueño → volver a [5]
-   └─ sí → [7] Codex: gate de checkpoint
+   ├─ no → [corrección por dueño] → actualizar plan si corresponde → volver a [5]
+   └─ sí → [6] Codex: gate de checkpoint
                          ↓
-             [8] Devin: cierre, commit y PR a develop
+             [7] Devin: cierre, commit y PR a develop
 ```
 
 El orquestador crea **todas** las Tasks y dependencias antes del primer Dispatch. Sólo inicia una Task que el DAG marque como lista. Una fase rechazada no abre una nueva fase: genera correcciones acotadas y repite su QA funcional.
@@ -79,7 +79,7 @@ docs/
 | Artefacto | Dueño | Contenido mínimo |
 |---|---|---|
 | Spec SDD | Kiro | Objetivo, alcance, no alcance, requisitos, reglas, datos, rutas, pantallas Stitch, criterios de aceptación, riesgos y preguntas abiertas. |
-| Plan QA funcional | Orquestador | Casos Playwright/Chromium, precondiciones, datos, pasos, expected result, evidencia requerida y criterio de bloqueo. |
+| Plan QA funcional | Codex / Terra / medium | Casos Playwright/Chromium del producto integrado, precondiciones, datos, pasos, resultado esperado, evidencia requerida y criterio de bloqueo. |
 | Reporte QA | Antigravity | Entorno, comandos, casos ejecutados, resultados, evidencia, defectos reproducibles y veredicto PASS/FAIL. |
 | Reporte final | Devin | Resumen, archivos, migraciones, pruebas, QA, desvíos, riesgos y enlaces a commit/PR. |
 | Changelog | Devin | Entrada de fase aceptada; no se actualiza si el gate falla. |
@@ -104,9 +104,30 @@ El spec debe incluir:
 
 Kiro pregunta al usuario sólo por decisiones bloqueantes. La Task no termina hasta que `## Preguntas abiertas` diga `Ninguna.` o el orquestador haya registrado un gate explícito para resolverla.
 
-## 6. Fase 2 — Plan QA funcional antes de implementar
+## 6. Fase 2 — Backend con Codex / Terra / medium
 
-El orquestador deriva `docs/qa/<phase-slug>-functional-test-plan.md` desde el spec **antes** de iniciar backend. Esto evita que QA tenga que adivinar qué probar.
+Codex / Terra / medium implementa sólo el alcance backend aprobado en el spec:
+
+- Django, PostgreSQL, modelos/migraciones en inglés.
+- Services para escrituras, selectors para lecturas y CBVs cuando un genérico Django sea claro.
+- Forms, permisos, rutas y pruebas unitarias/integración del comportamiento backend.
+- Sin commits, PRs ni cambios arbitrarios de UI.
+
+Entrega: diff, pruebas ejecutadas, migraciones, decisiones técnicas y rutas/listado de archivos modificados. El orquestador revisa que el contrato permita iniciar frontend.
+
+## 7. Fase 3 — Frontend con Cursor
+
+Cursor implementa las templates Django, CSS y JavaScript progresivo del spec. Usa Stitch como fuente visual, los exports locales y los contratos backend ya entregados.
+
+- Respeta el diseño de las pantallas asignadas y sus estados funcionales.
+- No modifica modelos, services, selectors, permisos, migraciones ni contratos backend sin un gate del orquestador.
+- Ejecuta las verificaciones locales aplicables y entrega el diff sin commit/PR.
+
+La integración backend/frontend debe estar disponible antes de crear el plan QA funcional.
+
+## 8. Fase 4 — Plan QA funcional del producto integrado
+
+Codex / Terra / medium deriva `docs/qa/<phase-slug>-functional-test-plan.md` desde el spec y el producto ya integrado. El plan se crea después del backend y frontend para que cubra el comportamiento real, sus rutas y sus estados finales; Antigravity no debe adivinar qué probar.
 
 Plantilla obligatoria:
 
@@ -132,30 +153,11 @@ Plantilla obligatoria:
 - No debe haber errores de consola ni requests fallidos no justificados.
 ```
 
-El plan cubre como mínimo: ruta feliz, validación, permisos, estados vacío/error relevantes, persistencia y regresiones de las rutas alteradas. **No incluye evaluación visual subjetiva.**
-
-## 7. Fase 3 — Backend con Codex / Terra / medium
-
-Codex implementa sólo el alcance backend aprobado en el spec:
-
-- Django, PostgreSQL, modelos/migraciones en inglés.
-- Services para escrituras, selectors para lecturas y CBVs cuando un genérico Django sea claro.
-- Forms, permisos, rutas y pruebas unitarias/integración del comportamiento backend.
-- Sin commits, PRs ni cambios arbitrarios de UI.
-
-Entrega: diff, pruebas ejecutadas, migraciones, decisiones técnicas y rutas/listado de archivos modificados. El orquestador revisa que el contrato permita iniciar frontend.
-
-## 8. Fase 4 — Frontend con Cursor
-
-Cursor implementa las templates Django, CSS y JavaScript progresivo del spec. Usa Stitch como fuente visual, los exports locales y los contratos backend ya entregados.
-
-- Respeta el diseño de las pantallas asignadas y sus estados funcionales.
-- No modifica modelos, services, selectors, permisos, migraciones ni contratos backend sin un gate del orquestador.
-- Ejecuta las verificaciones locales aplicables y entrega el diff sin commit/PR.
+El plan cubre como mínimo: ruta feliz, validación, permisos, estados vacío/error relevantes, persistencia y regresiones de las rutas alteradas. **No incluye evaluación visual subjetiva.** Si una corrección cambia el comportamiento integrado, Codex / Terra / medium actualiza el plan antes de la reejecución correspondiente.
 
 ## 9. Fase 5 — QA funcional con Antigravity
 
-Antigravity consume **obligatoriamente** el plan QA creado en la fase 2, levanta el entorno definido y ejecuta los casos con Playwright en Chromium.
+Antigravity consume **obligatoriamente** el plan QA creado en la fase 4, levanta el entorno definido y ejecuta los casos con Playwright en Chromium.
 
 El reporte `docs/qa/<phase-slug>-functional-report.md` debe incluir:
 
@@ -166,11 +168,11 @@ El reporte `docs/qa/<phase-slug>-functional-report.md` debe incluir:
 - Pasos reproducibles, resultado actual, resultado esperado y severidad de cada defecto.
 - Veredicto final inequívoco: `PASS` o `FAIL`.
 
-`FAIL` bloquea el gate. El orquestador asigna cada defecto al dueño correcto (Codex o Cursor), registra la corrección y ordena una nueva ejecución completa o focalizada del plan. Antigravity no declara PASS sin ejecutar la evidencia definida.
+`FAIL` bloquea el gate. El orquestador asigna cada defecto al dueño correcto (Codex / Terra / medium o Cursor), registra la corrección, solicita actualizar el plan si cambió el comportamiento y ordena una nueva ejecución completa o focalizada. Antigravity no declara PASS sin ejecutar la evidencia definida.
 
 ## 10. Fase 6 — Gate de checkpoint
 
-Codex revisa: spec aceptado, plan QA existente, pruebas backend, reporte QA `PASS`, artefactos actualizados y alcance limitado a la fase. Sólo entonces aprueba el checkpoint y habilita a Devin.
+Codex revisa: spec aceptado, backend y frontend integrados, plan QA creado a partir del producto integrado, pruebas backend, reporte QA `PASS`, artefactos actualizados y alcance limitado a la fase. Sólo entonces aprueba el checkpoint y habilita a Devin.
 
 Si no hay evidencia suficiente, el gate se rechaza y la fase vuelve al responsable correspondiente. Un gate no se resuelve con una afirmación del agente: exige rutas, comandos y resultados verificables.
 
@@ -226,7 +228,7 @@ Sólo después de ver el token esperado se reclama la terminal para una Task con
 - [ ] Worktree exclusivo de la fase.
 - [ ] Run, Tasks, dependencias y gate creados.
 - [ ] Spec Kiro aprobado y sin preguntas bloqueantes.
-- [ ] Plan QA funcional creado antes de backend.
+- [ ] Backend y frontend integrados antes de crear el plan QA funcional.
 - [ ] Referencias Stitch de la fase incluidas en el spec.
 - [ ] Preflight del agente que se va a despachar verificado con probe visible.
 

@@ -1,0 +1,15 @@
+{% comment %}
+Status/category badge.
+Expects: label
+Optional: status (published|draft|approved|pending|blocked|active|inactive|category)
+{% endcomment %}
+{% with status=status|default:"category" %}
+<span
+  class="inline-flex h-6 items-center rounded-sm px-2 text-caption font-semibold
+    {% if status == 'published' or status == 'approved' or status == 'active' %}bg-success-50 text-success-700
+    {% elif status == 'draft' or status == 'pending' %}bg-warning-50 text-warning-700
+    {% elif status == 'blocked' %}bg-danger-50 text-danger-900
+    {% elif status == 'inactive' %}bg-surface-alt text-ink-600
+    {% else %}bg-brand-50 text-brand-900{% endif %}"
+>{{ label }}</span>
+{% endwith %}

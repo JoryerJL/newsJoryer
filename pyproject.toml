@@ -1,0 +1,31 @@
+[project]
+name = "newsjoryer"
+version = "0.1.0"
+requires-python = ">=3.13.15"
+dependencies = [
+    "django==5.2.17",
+    "pillow~=11.0",
+    "psycopg[binary]~=3.2",
+    "python-decouple==3.8",
+    "whitenoise~=6.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-django>=4.14.0",
+    "ruff~=0.14.0",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+python_files = ["test_*.py", "*_tests.py"]
+testpaths = ["apps"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+exclude = ["migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

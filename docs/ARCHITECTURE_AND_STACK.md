@@ -9,10 +9,11 @@ Contrato de implementación del CMS de noticias CANACO. Define runtime, estructu
 | Estilo de aplicación | Monolito Django renderizado en servidor con Django Templates. Sin SPA, API separada ni microservicios. |
 | Arquitectura | Monolito modular por funcionalidades, con separación estricta entre `services` y `selectors`. |
 | Base de datos | PostgreSQL exclusivamente; SQLite no es sustituto aceptable en desarrollo. |
-| Dependencias | `uv`; `pyproject.toml` declara y `uv.lock` fija las versiones reproducibles. |
+| Dependencias | `uv` inicializa el proyecto e instala dependencias; `pyproject.toml` declara y `uv.lock` fija las versiones reproducibles. |
+| Generación de artefactos | Usar los generadores existentes (`uv init`, `uv add`, `django-admin startproject`, `manage.py startapp`, npm/CLI) en vez de crear manualmente sus artefactos. La configuración requerida que no genere una herramienta se escribe explícitamente. |
 | Configuración | Settings Django separados y variables de entorno con `python-decouple`; secretos fuera de Git. |
 | Idioma | Código, identificadores, pruebas, comentarios, commits y esquema de BD en inglés. UI y contenido visible en español. |
-| Frontend | HTML semántico, Django Templates, CSS y JavaScript progresivo mínimo. |
+| Frontend | HTML semántico, Django Templates, Tailwind CSS `4.3` compilado en build y JavaScript progresivo mínimo. Sin CDN ni runtime de Node en EC2. |
 | Vistas HTTP | Priorizar class-based views (CBVs) cuando una vista genérica o mixin reutilizable exprese claramente el caso de uso. |
 | Diseño | Stitch es la fuente de verdad visual; su HTML exportado es referencia, no código de producción. |
 
@@ -20,8 +21,8 @@ Contrato de implementación del CMS de noticias CANACO. Define runtime, estructu
 
 | Capa | Tecnología | Versión / restricción |
 |---|---|---|
-| Runtime | CPython | `3.13.15` |
-| Framework | Django LTS | `5.2.18` |
+| Runtime | Python | `3.13.15` |
+| Framework | Django LTS | `5.2.17` |
 | Base de datos | PostgreSQL | `17.11` |
 | Driver PostgreSQL | psycopg | `3.2.x`, fijado en `uv.lock` |
 | Variables de entorno | python-decouple | `3.8` |
@@ -30,21 +31,25 @@ Contrato de implementación del CMS de noticias CANACO. Define runtime, estructu
 | Gestor de Python/dependencias | uv | `>=0.12.17,<0.13` |
 | Linter y formatter | Ruff | `0.14.x`, fijado en `uv.lock` |
 | Pruebas | pytest + pytest-django | Versiones compatibles fijadas en `uv.lock` |
+| Toolchain CSS | Tailwind CSS `4.3` + `@tailwindcss/cli` | Dependencia y lockfile Node fijados; sólo se usa durante el build. |
 
 ### Política de versiones
 
-- CPython, Django y PostgreSQL son la línea base exacta; cambiarla requiere ADR.
+- Python, Django y PostgreSQL son la línea base exacta; cambiarla requiere ADR.
 - Las dependencias marcadas como fijadas se declaran con rango compatible y se resuelven con versión exacta y hash en el `uv.lock` de C0.
 - CI y revisión ejecutan `uv sync --locked`; un cambio en `pyproject.toml` sin su `uv.lock` correspondiente se rechaza.
 - Los parches de seguridad de Django/PostgreSQL son actualizaciones planificadas, nunca cambios locales improvisados. [Django](https://docs.djangoproject.com/en/5.2/releases/) · [PostgreSQL](https://www.postgresql.org/docs/release/) · [uv](https://docs.astral.sh/uv/concepts/python-versions/).
+- Tailwind CSS se fija en `4.3` con `@tailwindcss/cli` y el lockfile Node correspondiente. Node participa sólo en instalación y compilación; el proceso EC2 sirve el CSS generado mediante Django staticfiles y WhiteNoise.
 
 ## 3. Estructura de carpetas
 
 ```text
 newsjoryer/
 ├── manage.py
-├── pyproject.toml                    # Dependencias, herramientas y versión de Python
-├── uv.lock                           # Resolución reproducible, se versiona
+├── pyproject.toml                    # Dependencias Python y versión de Python
+├── uv.lock                           # Resolución reproducible de Python, se versiona
+├── package.json                      # Tailwind CSS 4.3, @tailwindcss/cli y script de build
+├── <lockfile Node>                   # Resolución reproducible de la toolchain CSS, se versiona
 ├── .python-version                   # 3.13.15
 ├── .env.example                      # Nombres de variables, sin secretos
 ├── .gitignore
@@ -87,9 +92,9 @@ newsjoryer/
 │   ├── components/                    # Componentes reutilizables
 │   └── errors/                        # 403.html, 404.html y 500.html
 ├── static/
-│   ├── css/                           # Tokens, base, componentes, público y panel
+│   ├── css/                           # input.css con @theme y tailwind.css compilado
 │   ├── js/                            # Mejora progresiva mínima
-│   └── images/                        # Branding estático, incluido logo CANACO
+│   └── images/                        # Espacio reservado de branding; sin asset de logo en C0
 ├── media/                             # Archivos cargados; ignorado por Git
 ├── fixtures/                          # Datos estables de demostración/desarrollo
 ├── docs/
@@ -240,7 +245,10 @@ POSTGRES_PORT=5432
 
 - `{% extends %}`, includes/componentes y HTML semántico; un único `h1` por página.
 - JavaScript sólo mejora una base HTML ya operable; no crea una segunda aplicación frontend.
-- Variables CSS implementan los tokens aprobados por Stitch; estilos mobile-first y breakpoints de `UI_UX_SPEC.md`.
+- Tailwind CSS `4.3` se compila con `@tailwindcss/cli`: `static/css/input.css` importa Tailwind y define tokens CSS-first con `@theme`; genera `static/css/tailwind.css`.
+- No se usa CDN, runtime de Tailwind en el navegador, `tailwind.config.js` ni configuración JavaScript salvo una necesidad explícita de compatibilidad; no existe tal necesidad en C0.
+- El artefacto `static/css/tailwind.css` debe existir antes de `collectstatic` y se sirve con Django staticfiles y WhiteNoise.
+- Los tokens de `@theme` implementan los valores aprobados por Stitch; estilos mobile-first y breakpoints de `UI_UX_SPEC.md`.
 - Sin estilos inline aislados: usar clases explícitas y reutilizables.
 - Mantener foco visible, contraste WCAG 2.1 AA, labels, `alt` y modales accesibles.
 
@@ -259,7 +267,7 @@ Todo checkpoint del roadmap exige: pruebas del comportamiento modificado, prueba
 
 ## 10. No objetivos explícitos
 
-No se agregan REST/GraphQL, Celery, Redis, Docker, Kubernetes, SPA, framework CSS, object storage, recuperación por email, analítica externa ni auth social antes de que un requisito de producto y una decisión de despliegue los justifiquen. Tecnología sin responsabilidad es complejidad, no arquitectura.
+No se agregan REST/GraphQL, Celery, Redis, Docker, Kubernetes, SPA, object storage, recuperación por email, analítica externa ni auth social antes de que un requisito de producto y una decisión de despliegue los justifiquen. Tailwind CSS `4.3` es la base de estilos aprobada y compilada en build; no implica un proceso Node de larga duración en EC2. Tecnología sin responsabilidad es complejidad, no arquitectura.
 
 ## 11. Decisiones obligatorias antes de producción
 

@@ -1,0 +1,14 @@
+{
+  "name": "newsjoryer",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i static/css/input.css -o static/css/tailwind.css --minify"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.0",
+    "tailwindcss": "4.3.0"
+  },
+  "private": true
+}
