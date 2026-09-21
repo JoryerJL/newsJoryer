@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "outline-variant": "#bfc8cb",
+          "warning-700": "#8a5a00",
+          "inverse-primary": "#96cfe1",
+          "tertiary-fixed-dim": "#7ed6c2",
+          "brand-100": "#c8d8e4",
+          "danger-text": "#8e2a20",
+          "secondary": "#23695c",
+          "accent-700": "#3a7d6f",
+          "surface-container-lowest": "#ffffff",
+          "inverse-on-surface": "#def4fe",
+          "on-tertiary": "#ffffff",
+          "surface-tint": "#2a6676",
+          "line": "#dfe6ea",
+          "surface-container-low": "#e4f7ff",
+          "on-error-container": "#93000a",
+          "brand-50": "#eef4f8",
+          "outline": "#70787c",
+          "surface-container": "#dcf1fb",
+          "on-tertiary-fixed": "#00201a",
+          "on-secondary": "#ffffff",
+          "secondary-fixed": "#acf0df",
+          "surface": "#ffffff",
+          "on-secondary-fixed": "#00201a",
+          "primary": "#074f5e",
+          "accent-100": "#e7f4f0",
+          "danger-50": "#fdecea",
+          "brand-500": "#4a8496",
+          "error-container": "#ffdad6",
+          "surface-container-high": "#d6ecf5",
+          "surface-bright": "#f2fbff",
+          "warning-50": "#fdf4e3",
+          "primary-fixed": "#b2ecfe",
+          "tertiary-container": "#006c5c",
+          "on-secondary-fixed-variant": "#005144",
+          "surface-table-zebra": "#fafbfc",
+          "surface-dim": "#c8dee7",
+          "on-error": "#ffffff",
+          "background": "#f2fbff",
+          "on-surface-variant": "#40484b",
+          "danger-700": "#c0392b",
+          "success-700": "#3a7d6f",
+          "secondary-container": "#a9eddc",
+          "on-tertiary-container": "#92ead5",
+          "on-primary": "#ffffff",
+          "tertiary": "#005245",
+          "secondary-fixed-dim": "#90d3c3",
+          "on-primary-fixed-variant": "#044e5d",
+          "surface-container-highest": "#d0e6ef",
+          "on-primary-fixed": "#001f27",
+          "surface-alt": "#f2f2f2",
+          "success-text": "#2a5d52",
+          "brand-900": "#1f4d59",
+          "primary-fixed-dim": "#96cfe1",
+          "inverse-surface": "#1f333a",
+          "tertiary-fixed": "#9af3de",
+          "accent-500": "#52ab98",
+          "success-50": "#e7f4f0",
+          "on-secondary-container": "#296d60",
+          "info-700": "#2b6777",
+          "ink-900": "#1a2e35",
+          "on-surface": "#091e25",
+          "ink-400": "#9aacb5",
+          "on-tertiary-fixed-variant": "#005144",
+          "info-50": "#eef4f8",
+          "surface-variant": "#d0e6ef",
+          "error": "#ba1a1a",
+          "primary-container": "#2b6777",
+          "brand-700": "#2b6777",
+          "on-background": "#091e25",
+          "ink-600": "#5a7784",
+          "on-primary-container": "#aae3f6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "space-sm": "0.5rem",
+          "margin": "1.5rem",
+          "gutter-sm": "1rem",
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "h1": [
+            "\"Source Serif 4\""
+          ],
+          "body-lg-lead": [
+            "Inter"
+          ],
+          "overline": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "caption": [
+            "Inter"
+          ],
+          "display": [
+            "\"Source Serif 4\""
+          ],
+          "h1-mobile": [
+            "\"Source Serif 4\""
+          ],
+          "h3": [
+            "\"Source Serif 4\""
+          ],
+          "body-sm-semibold": [
+            "Inter"
+          ],
+          "h4": [
+            "Inter"
+          ],
+          "display-mobile": [
+            "\"Source Serif 4\""
+          ],
+          "h2": [
+            "\"Source Serif 4\""
+          ],
+          "body": [
+            "Inter"
+          ],
+          "body-semibold": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "h1": [
+            "36px",
+            {
+              "lineHeight": "1.2",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg-lead": [
+            "18px",
+            {
+              "lineHeight": "1.7",
+              "fontWeight": "500"
+            }
+          ],
+          "overline": [
+            "12px",
+            {
+              "lineHeight": "1.4",
+              "letterSpacing": "0.08em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "1.5",
+              "fontWeight": "400"
+            }
+          ],
+          "caption": [
+            "12px",
+            {
+              "lineHeight": "1.4",
+              "fontWeight": "500"
+            }
+          ],
+          "display": [
+            "48px",
+            {
+              "lineHeight": "1.1",
+              "fontWeight": "700"
+            }
+          ],
+          "h1-mobile": [
+            "28px",
+            {
+              "lineHeight": "1.25",
+              "fontWeight": "700"
+            }
+          ],
+          "h3": [
+            "22px",
+            {
+              "lineHeight": "1.3",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm-semibold": [
+            "14px",
+            {
+              "lineHeight": "1.5",
+              "fontWeight": "600"
+            }
+          ],
+          "h4": [
+            "18px",
+            {
+              "lineHeight": "1.4",
+              "fontWeight": "600"
+            }
+          ],
+          "display-mobile": [
+            "32px",
+            {
+              "lineHeight": "1.2",
+              "fontWeight": "700"
+            }
+          ],
+          "h2": [
+            "28px",
+            {
+              "lineHeight": "1.25",
+              "fontWeight": "600"
+            }
+          ],
+          "body": [
+            "16px",
+            {
+              "lineHeight": "1.6",
+              "fontWeight": "400"
+            }
+          ],
+          "body-semibold": [
+            "16px",
+            {
+              "lineHeight": "1.6",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "1.7",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface-alt font-body text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface border-r border-line z-50 flex flex-col justify-between shadow-sm"><div class="flex flex-col flex-1 overflow-y-auto"><div class="p-space-lg border-b border-line flex flex-col items-center text-center"><div class="relative mb-space-sm"><img alt="Profile" class="w-14 h-14 rounded-full object-cover border-2 border-brand-100 shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1V1mp0M_-HhAYwf5nSnTlzpcRj5gUh4hjSXuCtxy0XVecr_xqd4dRIptF-L5pFbgCwXw3IgeuPGwt0ibU5wE9cCMauHOQ_vkGQXNYLsk0k2EFIqOykVaPelcVjFOAl_-FYLW_q4aLQ8_eYZkWTc_wrG0woEnak5GAKtFcinh2-IGNqVPHlAv7G9C9gvwBeCDhNW-lVxsh7ajVaZRNAVMZr45WOY5sdFCIivNs53k5Oo7w"/><span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-accent-700 border-2 border-surface rounded-full"></span></div><h3 class="font-body-sm-semibold text-body-sm-semibold text-ink-900 leading-snug">María López</h3><span class="mt-1 inline-flex items-center px-2 py-0.5 rounded text-[11px] font-caption font-semibold bg-brand-50 text-brand-900 border border-brand-100">Administrador</span></div><nav class="flex flex-col gap-1 p-space-sm mt-space-xs" data-active-classes="bg-brand-50 text-brand-900 font-semibold border-l-4 border-brand-700"><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-brand-50 hover:text-brand-900 transition-colors font-body-sm text-body-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px] text-ink-600">dashboard</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-brand-50 text-brand-900 font-semibold border-l-4 border-brand-700" data-path="noticias" href="#"><span class="material-symbols-outlined text-[20px] text-ink-600">newspaper</span><span>Noticias</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-brand-50 hover:text-brand-900 transition-colors font-body-sm text-body-sm" data-path="comentarios" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-ink-600">forum</span><span>Comentarios</span></div><span class="px-2 py-0.5 text-[11px] font-caption font-semibold bg-warning-50 text-warning-700 rounded-full border border-warning-700/20">3</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-brand-50 hover:text-brand-900 transition-colors font-body-sm text-body-sm" data-path="categorias" href="#"><span class="material-symbols-outlined text-[20px] text-ink-600">folder</span><span>Categorías</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-brand-50 hover:text-brand-900 transition-colors font-body-sm text-body-sm" data-path="departamentos" href="#"><span class="material-symbols-outlined text-[20px] text-ink-600">corporate_fare</span><span>Departamentos</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-brand-50 hover:text-brand-900 transition-colors font-body-sm text-body-sm" data-path="usuarios" href="#"><span class="material-symbols-outlined text-[20px] text-ink-600">group</span><span>Usuarios</span></a><div class="my-2 border-t border-line/60 mx-2"></div><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-brand-50 hover:text-brand-900 transition-colors font-body-sm text-body-sm" data-path="mi-perfil" href="#"><span class="material-symbols-outlined text-[20px] text-ink-600">person</span><span>Mi perfil</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-brand-50 hover:text-brand-900 transition-colors font-body-sm text-body-sm" data-path="cambiar-contrasena" href="#"><span class="material-symbols-outlined text-[20px] text-ink-600">key</span><span>Cambiar contraseña</span></a></nav></div><div class="p-space-sm border-t border-line"><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-danger-700 hover:bg-danger-50 transition-colors font-body-sm-semibold text-body-sm-semibold" data-path="login" href="#"><span class="material-symbols-outlined text-[20px] text-danger-700">logout</span><span>Cerrar sesión</span></a></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface border-b border-line z-40 px-space-lg flex items-center justify-between shadow-sm"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #2b6777
+- Font: sourceSerif4
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V__GykfvCvI5_ZF2Y01XkNnFHY32sWY3pejWBLBpvKlcTTN0W78BquXPW-GPQb5Jp30b_F4snyQ3f_1PzE_6AwzY4rpiDcvfVjKRhhEMqwwcxytcMQm6DcYEVfaqeiEorDQ7pd1kRM6iTc3LcZLRRWhI8KalacOyV213rwmp4Y63UStjvKcfvvoT9NTMZIARsdkIcRfbb1A9g3JxnRfbq0hNZuj9NoMZ2510p_u0ouNg"/><div class="hidden lg:flex flex-col"><span class="font-caption text-overline uppercase tracking-wider text-ink-600 font-semibold">Panel Administrativo</span><span class="font-h4 text-body-sm-semibold text-ink-900 font-semibold leading-tight">CANACO SERVYTUR Villahermosa</span></div><div class="h-6 w-px bg-line mx-space-xs hidden md:block"></div><a class="inline-flex items-center gap-1.5 text-body-sm font-body-sm-semibold text-brand-700 hover:text-brand-900 transition-colors px-2.5 py-1 rounded bg-brand-50 hover:bg-brand-100" href="#" target="_blank"><span class="material-symbols-outlined text-[16px]">open_in_new</span><span>Ver portal público</span></a></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-accent-100 rounded-full border border-accent-500/30"><span class="w-2 h-2 rounded-full bg-accent-700 animate-pulse"></span><span class="font-caption text-caption font-semibold text-success-text">Sistema en línea</span></div><div class="h-6 w-px bg-line hidden sm:block"></div><div class="flex items-center gap-2"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-line" src="https://lh3.googleusercontent.com/aida/AEtjO1V1mp0M_-HhAYwf5nSnTlzpcRj5gUh4hjSXuCtxy0XVecr_xqd4dRIptF-L5pFbgCwXw3IgeuPGwt0ibU5wE9cCMauHOQ_vkGQXNYLsk0k2EFIqOykVaPelcVjFOAl_-FYLW_q4aLQ8_eYZkWTc_wrG0woEnak5GAKtFcinh2-IGNqVPHlAv7G9C9gvwBeCDhNW-lVxsh7ajVaZRNAVMZr45WOY5sdFCIivNs53k5Oo7w"/><span class="material-symbols-outlined text-ink-600 text-[20px] cursor-pointer hover:text-ink-900 transition-colors">expand_more</span></div></div></header><main class="w-full pt-16 bg-surface-alt min-h-screen"><div class="p-8"><div class="flex flex-col w-full">
+<!-- Toast Notification Container (Dynamic Alert) -->
+<div class="hidden fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 bg-surface text-ink-900 rounded-xl shadow-xl border-l-4 border-accent-700 transition-all duration-300 transform translate-y-2" id="toastNotification">
+<span class="material-symbols-outlined text-accent-700 text-[20px]" id="toastIcon">check_circle</span>
+<span class="font-body-sm-semibold text-body-sm-semibold" id="toastMessage">Acción completada con éxito</span>
+<button class="ml-2 text-ink-400 hover:text-ink-900 transition-colors" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Header Section with Key Metrics Pill & Action -->
+<header class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h1 class="font-h2 text-h2 text-ink-900 font-bold">Gestión de Noticias</h1>
+<span class="px-2.5 py-0.5 rounded-full text-caption font-semibold bg-brand-50 text-brand-900 border border-brand-100">
+          47 notas activas
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-ink-600">
+        Administra, redacta, publica y supervisa todas las notas y comunicados oficiales de CANACO.
+      </p>
+</div>
+<div class="flex items-center gap-3 self-start lg:self-auto">
+<button class="inline-flex items-center gap-2 h-10 px-4 bg-brand-50 text-brand-900 font-body-sm-semibold text-body-sm-semibold rounded-lg hover:bg-brand-100 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Exportar</span>
+</button>
+<a class="inline-flex items-center gap-2 h-10 px-4 bg-brand-700 text-surface font-body-sm-semibold text-body-sm-semibold rounded-lg hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-700 focus:ring-offset-2 transition-all shadow-sm" data-path="crear-noticia" href="#">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Crear publicación</span>
+</a>
+</div>
+</header>
+<!-- Filter & Search Toolbar Card -->
+<section class="bg-surface rounded-xl p-4 shadow-sm mb-6 border border-line">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 items-center">
+<!-- Search Input -->
+<div class="lg:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-ink-400 text-[20px] pointer-events-none">
+          search
+        </span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface text-ink-900 font-body-sm text-body-sm rounded-lg border border-line focus:outline-none focus:border-brand-700 focus:ring-2 focus:ring-brand-700/20 placeholder:text-ink-400 transition-all" id="searchInput" placeholder="Buscar por título o palabras clave..." type="text"/>
+</div>
+<!-- Estado Dropdown -->
+<div class="lg:col-span-2 relative">
+<label class="sr-only" for="filterEstado">Estado</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 bg-surface text-ink-900 font-body-sm text-body-sm rounded-lg border border-line focus:outline-none focus:border-brand-700 focus:ring-2 focus:ring-brand-700/20 appearance-none cursor-pointer transition-all" id="filterEstado">
+<option value="todos">Todos los estados</option>
+<option value="publicado">Publicado</option>
+<option value="borrador">Borrador</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-ink-400 text-[18px] pointer-events-none">
+            expand_more
+          </span>
+</div>
+</div>
+<!-- Categoría Dropdown -->
+<div class="lg:col-span-2 relative">
+<label class="sr-only" for="filterCategoria">Categoría</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 bg-surface text-ink-900 font-body-sm text-body-sm rounded-lg border border-line focus:outline-none focus:border-brand-700 focus:ring-2 focus:ring-brand-700/20 appearance-none cursor-pointer transition-all" id="filterCategoria">
+<option value="todas">Todas las categorías</option>
+<option value="eventos">Eventos</option>
+<option value="economia">Economía</option>
+<option value="innovacion">Innovación</option>
+<option value="turismo">Turismo</option>
+<option value="politica">Política Comercial</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-ink-400 text-[18px] pointer-events-none">
+            expand_more
+          </span>
+</div>
+</div>
+<!-- Departamento Dropdown -->
+<div class="lg:col-span-2 relative">
+<label class="sr-only" for="filterDepartamento">Departamento</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 bg-surface text-ink-900 font-body-sm text-body-sm rounded-lg border border-line focus:outline-none focus:border-brand-700 focus:ring-2 focus:ring-brand-700/20 appearance-none cursor-pointer transition-all" id="filterDepartamento">
+<option value="todos">Todos los departamentos</option>
+<option value="afiliacion">Afiliación y Comercio</option>
+<option value="estudios">Estudios Económicos</option>
+<option value="presidencia">Presidencia</option>
+<option value="comunicacion">Comunicación Social</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-ink-400 text-[18px] pointer-events-none">
+            expand_more
+          </span>
+</div>
+</div>
+<!-- Reset Filters Button -->
+<div class="lg:col-span-1 flex justify-end">
+<button class="w-full lg:w-10 h-10 flex items-center justify-center gap-2 lg:gap-0 bg-surface-alt hover:bg-brand-50 text-ink-600 hover:text-brand-900 rounded-lg border border-line transition-colors" id="btnResetFilters" title="Limpiar todos los filtros">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span class="lg:hidden font-body-sm text-body-sm">Limpiar</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Data Table Card -->
+<section class="bg-surface rounded-xl shadow-sm border border-line overflow-hidden flex flex-col">
+<!-- Quick Table Statistics Banner -->
+<div class="px-6 py-3 bg-surface-bright border-b border-line flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-accent-700"></span>
+<span class="font-body-sm text-body-sm text-ink-600">Publicadas: <strong class="font-semibold text-ink-900">42</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-warning-700"></span>
+<span class="font-body-sm text-body-sm text-ink-600">Borradores: <strong class="font-semibold text-ink-900">5</strong></span>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<span class="material-symbols-outlined text-ink-400 text-[16px]">visibility</span>
+<span class="font-body-sm text-body-sm text-ink-600">Total lecturas: <strong class="font-semibold text-ink-900">38,420</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-caption text-caption text-ink-600">Vista:</span>
+<button class="p-1 text-brand-900 bg-brand-50 rounded" title="Vista compacta">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+</button>
+<button class="p-1 text-ink-400 hover:text-brand-900 rounded transition-colors" title="Vista tarjetas">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+</div>
+</div>
+<!-- Responsive Table Wrapper -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse min-w-[960px]">
+<thead>
+<tr class="h-12 bg-surface-bright/70 border-b border-line font-body-sm-semibold text-body-sm-semibold text-ink-900 select-none">
+<th class="pl-6 pr-4 py-3 min-w-[340px]" scope="col">
+<div class="flex items-center gap-1.5 cursor-pointer hover:text-brand-900">
+<span>TÍTULO</span>
+<span class="material-symbols-outlined text-[16px] text-ink-400">unfold_more</span>
+</div>
+</th>
+<th class="px-4 py-3 min-w-[170px]" scope="col">AUTOR</th>
+<th class="px-4 py-3 min-w-[120px]" scope="col">
+<div class="flex items-center gap-1 cursor-pointer hover:text-brand-900">
+<span>CREACIÓN</span>
+<span class="material-symbols-outlined text-[16px] text-ink-400">arrow_downward</span>
+</div>
+</th>
+<th class="px-4 py-3 min-w-[120px]" scope="col">ACTUALIZACIÓN</th>
+<th class="px-4 py-3 text-right min-w-[90px]" scope="col">VISITAS</th>
+<th class="px-4 py-3 text-center min-w-[110px]" scope="col">ESTADO</th>
+<th class="pl-4 pr-6 py-3 text-right min-w-[170px]" scope="col">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-line font-body-sm text-body-sm text-ink-900" id="newsTableBody">
+<!-- Row 1 -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Modern real estate symposium and business conference banner featuring an executive stage with warm ambient lighting, corporate banners of CANACO Tabasco, podium microphones, and sleek conference seating in Villahermosa." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsT53CA_bGtrJx2OkH9qYMpzS3EeOvGTJJ8gChTW8chtTkW-Qay1M0szUlEiNbGlI-Q9aPz8bCEDdkd6-p8LuBLjnVV79XJW4ft9YaQ65j594xxMA6WQ_IukfmFqoPrCRvEDIOJ2bVnEFSMSOi-oP2HOL-pRZSvZFbh6CCU7C2SPVZ9k3h0WgRbenlA9CxUJ3zActfPO-NR2uQRBMFW0LUg9OHWEyJ27OJrEay9M3FOiGTABPmy-vYIQ"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Inauguración del Gran Simposium Inmobiliario y Turístico 2026
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-089 · Turismo</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<img alt="Avatar María López" class="w-7 h-7 rounded-full object-cover border border-brand-100" src="https://lh3.googleusercontent.com/aida/AEtjO1V1mp0M_-HhAYwf5nSnTlzpcRj5gUh4hjSXuCtxy0XVecr_xqd4dRIptF-L5pFbgCwXw3IgeuPGwt0ibU5wE9cCMauHOQ_vkGQXNYLsk0k2EFIqOykVaPelcVjFOAl_-FYLW_q4aLQ8_eYZkWTc_wrG0woEnak5GAKtFcinh2-IGNqVPHlAv7G9C9gvwBeCDhNW-lVxsh7ajVaZRNAVMZr45WOY5sdFCIivNs53k5Oo7w"/>
+<span class="truncate font-body-sm text-body-sm text-ink-900">María López</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">20 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">22 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">1,234</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text">
+                Publicado
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Ver nota pública">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar publicación">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-warning-700 hover:bg-warning-50 transition-colors" onclick="togglePublish(this, 'Inauguración del Gran Simposium')" title="Despublicar">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Inauguración del Gran Simposium')" title="Eliminar nota">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group bg-surface-table-zebra">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Dozens of vibrant cyclists riding through Paseo Tabasco avenue in Villahermosa with CANACO promotional flags, cheerful families, bright morning sun, and tropical palms in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbUtD6ynSb6yvF5SIHB_xRzZ1YiPQAVPbzJQZDs6UYZEPkhPBj5sNsf5S81fabb6OkgRphJM3NoR2njhLTljYHtg99ipKkHAy8BsqBblcLvTwxt-9JIChDg_EwJk_zSjTT34Erxf6MF0JvH9rp-QIuEZQhYG3ndUWLWpj1z5ydvvEH1iRApA0C9nds2hRmzhsKpgZXDsSKUMYK6d89dcPxQQRL4jNU_3TXjHpvaszRGWmFX2Ty0OQfoQ"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Magna Rodada Ciclista Familiar y Comercial CANACO
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-088 · Eventos</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-brand-700 text-surface flex items-center justify-center text-[12px] font-bold">CP</div>
+<span class="truncate font-body-sm text-body-sm text-ink-900">Carlos Pérez</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">18 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">19 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">987</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text">
+                Publicado
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Ver nota pública">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar publicación">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-warning-700 hover:bg-warning-50 transition-colors" onclick="togglePublish(this, 'Magna Rodada Ciclista')" title="Despublicar">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Magna Rodada Ciclista')" title="Eliminar nota">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 (Borrador) -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Port shipping containers and international trade logistics center, maritime freight cargo in warm tropical lighting, representing export routes from Tabasco to Central America." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxg-k26S_g2hy5oNIVfd2dp6J_dSvlDsdsh2__9xvQk3F_LRjR3SujQKKQ2xyMtT0E4FwrJBES50X6lWtAB9m5LrBziUETJr2gm96QRNQs6tBGmPw3wv-cMnDChUoUSWq_AIhRZ7QwQ3ANTVyxgzJdg_OERw0m54pO6zkWUjuoMM9xLkNphg5vir2Sq2f0QvLgzhLyGOx8oNQZfFFXnFLtG9hpkeaJy6nDRlpAoucqh2Xf4P67WDc7PQ"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Foro de exportación para PyMEs tabasqueñas hacia Centroamérica
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-087 · Comercio Exterior</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-brand-700 text-surface flex items-center justify-center text-[12px] font-bold">CP</div>
+<span class="truncate font-body-sm text-body-sm text-ink-900">Carlos Pérez</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">19 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">20 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">410</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-warning-50 text-warning-700">
+                Borrador
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Vista previa">
+<span class="material-symbols-outlined text-[18px]">preview</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar borrador">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-accent-700 hover:text-white hover:bg-accent-700 transition-colors" onclick="publishDraft(this, 'Foro de exportación')" title="Publicar inmediatamente">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Foro de exportación')" title="Eliminar borrador">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group bg-surface-table-zebra">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Artisanal Tabasco cocoa pods, raw cocoa beans, and crafted fine chocolate bars presented on a polished wooden rustic surface with soft culinary studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1BzxJcikAQCLzUnCc8u93FACtdPYMEaKtrSg1aCXjTPNnt0Rb--vGYmTlQT01AsCay57TtjVcb8BEvGxhAELxynDP4bS_TlyyfseL3CrlfBdryEgTYmQkWXPq0r6H5FvbBIS07IGp4RtlTxHAEivKuwCss2gDkwHw6VpxsMZjldbrP0okGod9na8rlGBtPV7gLivp04Jo_8LJfEhCQ4VjZMhYGsmb8fR9IZrhD7yABe1jUQxWeBos6A"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Presentación de la Ruta Gastronómica del Cacao y Chocolate
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-086 · Turismo</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<img alt="Avatar María López" class="w-7 h-7 rounded-full object-cover border border-brand-100" src="https://lh3.googleusercontent.com/aida/AEtjO1V1mp0M_-HhAYwf5nSnTlzpcRj5gUh4hjSXuCtxy0XVecr_xqd4dRIptF-L5pFbgCwXw3IgeuPGwt0ibU5wE9cCMauHOQ_vkGQXNYLsk0k2EFIqOykVaPelcVjFOAl_-FYLW_q4aLQ8_eYZkWTc_wrG0woEnak5GAKtFcinh2-IGNqVPHlAv7G9C9gvwBeCDhNW-lVxsh7ajVaZRNAVMZr45WOY5sdFCIivNs53k5Oo7w"/>
+<span class="truncate font-body-sm text-body-sm text-ink-900">María López</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">18 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">18 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">852</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text">
+                Publicado
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Ver nota pública">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar publicación">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-warning-700 hover:bg-warning-50 transition-colors" onclick="togglePublish(this, 'Ruta Gastronómica del Cacao')" title="Despublicar">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Ruta Gastronómica del Cacao')" title="Eliminar nota">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Business professionals collaborating in an interactive technological computer lab with modern laptops displaying AI analytics and graphs, clean educational atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbhTvBSzzAVKCLc6no6OgED_U5KxkVV_czYog2C89XMlw5gZ6fOnu6susKC52WnAda7dgr1U0LAXhYD5SCjSF9OkAHQblEbF1xlXPP6Cne04Z6RHlVHJsBKMjiTDXpojONvV2U2vqClfg1jTIi1aPnw6P4amaH3ifARwoepXFqkhhiduQh8AyWXZf8aiyFmSSS3zLspQH3TEx5E7H8ueD5SZLFAuh4G3F4Ssz9Yyi3892LK5fgYM6qIA"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Taller práctico de Inteligencia Artificial para PyMEs
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-085 · Innovación</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary text-surface flex items-center justify-center text-[12px] font-bold">RR</div>
+<span class="truncate font-body-sm text-body-sm text-ink-900">Roberto Ruiz</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">17 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">18 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">812</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text">
+                Publicado
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Ver nota pública">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar publicación">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-warning-700 hover:bg-warning-50 transition-colors" onclick="togglePublish(this, 'Taller de Inteligencia Artificial')" title="Despublicar">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Taller de Inteligencia Artificial')" title="Eliminar nota">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group bg-surface-table-zebra">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Economic business charts with financial data upward arrows, statistical reports and calculators in an executive office setting overlooking Villahermosa skyline." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrUKjRTvqTR3wStUFds4okisQf8ipnFaR0ca4NAAxqnylnPPwrnaWdwHmkDt56Jw4dBSpQs31flVwpEPtA5JDxNOayDmfBuNxDSDwC_1AjVyuezsVoRFrbCKu1uAIMlta2uy1KabCKUiBO8jsXt5TcLuz0GxUg3nnAi81EkzGjP_yEktme0LWh7uQjS37K9y5yX3fCcuofZic_B0VrcQconrF5h0SL9iXSFwwtpU7mDYfzbGOuVwubaw"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Balance económico trimestral: Ventas repuntan 4.2%
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-084 · Economía</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-accent-700 text-surface flex items-center justify-center text-[12px] font-bold">AT</div>
+<span class="truncate font-body-sm text-body-sm text-ink-900">Ana Torres</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">15 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">16 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">745</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text">
+                Publicado
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Ver nota pública">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar publicación">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-warning-700 hover:bg-warning-50 transition-colors" onclick="togglePublish(this, 'Balance económico trimestral')" title="Despublicar">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Balance económico trimestral')" title="Eliminar nota">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Young entrepreneur pitching innovation startup project to a panel of judges, modern stage, enthusiastic audience, warm cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdr7f3UkXxSdMFzoaZ1nvncWSWID1NQG5NUTDQK_yS8mhP5Z5xT4qtT2R2EOKvVBBNEVJhEmfs-0_lHZeI-EOmSNtRgkqHH0MjpCHUuiQbaNUy7vlewtY4_dscn9W2K3lM0VQHb66sORCx1F9vHE1jpD2sVHByUmhVhfp-ilxCeGwd6qeNqzgNWnJgVmGMtfY6akcUVv79bNsaUdo6YvQeFqjXjjRmN1ya7a7bLssm2ZEScxtw2CyRQw"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Convocatoria al Premio Joven Emprendedor Tabasco 2026
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-083 · Innovación</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<img alt="Avatar María López" class="w-7 h-7 rounded-full object-cover border border-brand-100" src="https://lh3.googleusercontent.com/aida/AEtjO1V1mp0M_-HhAYwf5nSnTlzpcRj5gUh4hjSXuCtxy0XVecr_xqd4dRIptF-L5pFbgCwXw3IgeuPGwt0ibU5wE9cCMauHOQ_vkGQXNYLsk0k2EFIqOykVaPelcVjFOAl_-FYLW_q4aLQ8_eYZkWTc_wrG0woEnak5GAKtFcinh2-IGNqVPHlAv7G9C9gvwBeCDhNW-lVxsh7ajVaZRNAVMZr45WOY5sdFCIivNs53k5Oo7w"/>
+<span class="truncate font-body-sm text-body-sm text-ink-900">María López</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">14 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">15 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">630</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text">
+                Publicado
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Ver nota pública">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar publicación">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-warning-700 hover:bg-warning-50 transition-colors" onclick="togglePublish(this, 'Premio Joven Emprendedor')" title="Despublicar">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Premio Joven Emprendedor')" title="Eliminar nota">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group bg-surface-table-zebra">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Roundtable business discussion panel with economic leaders and fiscal experts seated around polished boardroom table discussing tax policy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbivr2DGM2NolmHeqVz1rsIjXPgoZZtfouWUHsu6jyEWS8qQhlmXP1WVJZ3BmmzGhmayWr3EEBFZejly87niLbRNu5NaMfgENAc0HIlLwvZYB6F2UKwtQWyF66nowxLOl6FWPNcnf2o2p2fCQM7TEuMXwABHcdAxIaHREUnghzMSjduRVPmCCp8WojA9TYNclqtdUkAhidrVG0RFhmJuSzXmVDKkdc5QFw9nyIYwtJuBUoPik28LzWTQ"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Mesa de diálogo sobre Reforma Fiscal y Competitividad
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-082 · Política Comercial</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-accent-700 text-surface flex items-center justify-center text-[12px] font-bold">AT</div>
+<span class="truncate font-body-sm text-body-sm text-ink-900">Ana Torres</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">10 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">12 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">520</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text">
+                Publicado
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Ver nota pública">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar publicación">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-warning-700 hover:bg-warning-50 transition-colors" onclick="togglePublish(this, 'Mesa de diálogo Fiscal')" title="Despublicar">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Mesa de diálogo Fiscal')" title="Eliminar nota">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 9 -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Vibrant historic district of Villahermosa with festoon lights, cultural street performance, merchant stands and local food vendors in lively evening festival." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCssdvSivyLLg6AO2H0LWtihUlp4d7Ik4Z8rGpiMcOCWXKRoxEDbpCyZyTBznvwiGvzcgiPRMTlFbEqmj6NnAo_etE3AFclRb4ioT06oouzbNCLlcVRfw7-5xh7BnJbgVpUXsO7pkaIN05XDZ9C-vSkrlqupQxaQ2yQ5tTjWioDZAcHqZSnWqnYFDN3FPYsTABprADn4fxkqoMZT0CKKRQpNWNJhdkVIFf4tMM-dIOBG9E0Y3FYtJWWgQ"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Festival Cultural y Comercial del Centro Histórico de Villahermosa
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-081 · Eventos</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-brand-900 text-surface flex items-center justify-center text-[12px] font-bold">LS</div>
+<span class="truncate font-body-sm text-body-sm text-ink-900">Laura Sánchez</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">08 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">09 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">490</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text">
+                Publicado
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Ver nota pública">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar publicación">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-warning-700 hover:bg-warning-50 transition-colors" onclick="togglePublish(this, 'Festival Cultural y Comercial')" title="Despublicar">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Festival Cultural y Comercial')" title="Eliminar nota">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 10 (Borrador) -->
+<tr class="h-16 hover:bg-brand-50/70 transition-colors group bg-surface-table-zebra">
+<td class="pl-6 pr-4 py-2.5">
+<div class="flex items-center gap-3">
+<img class="w-11 h-11 rounded-md object-cover flex-shrink-0 bg-brand-100 shadow-sm border border-line" data-alt="Digital transformation map interface showing smart tourism hotspots and mobile app connectivity across municipal parks and hotels in Tabasco." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbSSZdCn8G-J-j2lcXH4w0mb9gwMTMC_BQdGNVEuLb6Kkgi1odfnJ1Wr3ynROzNQoDNgkx1d3GnLU1Zjg4dm_ujCDBCe-t9k1ZnrrSRzg4wuWJ4k3uE3Dsd-sB-Z2RImmv7zZkpFtp4Z1SCGfxS4N0NvDKTsJsqlgRAx98npYVTCSmT8loKvZa97xnkLM9KV5G4aEmz2YX6sGRVv--A-8Rdk2qf9F1nmXZjjnAmh-SIUII_2QicXoBcQ"/>
+<div class="flex flex-col min-w-0">
+<a class="font-body-sm-semibold text-body-sm-semibold text-ink-900 hover:text-brand-700 line-clamp-1 transition-colors" href="#">
+                    Estrategias de Digitalización para el Sector Turístico Municipal
+                  </a>
+<span class="font-caption text-caption text-ink-600">ID: #NOT-2026-080 · Innovación</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary text-surface flex items-center justify-center text-[12px] font-bold">RR</div>
+<span class="truncate font-body-sm text-body-sm text-ink-900">Roberto Ruiz</span>
+</div>
+</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">05 may 2026</td>
+<td class="px-4 py-2.5 text-ink-600 whitespace-nowrap">06 may 2026</td>
+<td class="px-4 py-2.5 text-right font-body-sm-semibold text-body-sm-semibold text-ink-900 tabular-nums">0</td>
+<td class="px-4 py-2.5 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-warning-50 text-warning-700">
+                Borrador
+              </span>
+</td>
+<td class="pl-4 pr-6 py-2.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Vista previa">
+<span class="material-symbols-outlined text-[18px]">preview</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-ink-600 hover:text-brand-900 hover:bg-brand-50 transition-colors" title="Editar borrador">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-accent-700 hover:text-white hover:bg-accent-700 transition-colors" onclick="publishDraft(this, 'Estrategias de Digitalización')" title="Publicar inmediatamente">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-danger-700 hover:text-white hover:bg-danger-700 transition-colors" onclick="confirmDelete(this, 'Estrategias de Digitalización')" title="Eliminar borrador">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 bg-surface border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-ink-600">
+<span>Mostrando <strong class="font-semibold text-ink-900">1–10</strong> de <strong class="font-semibold text-ink-900">47</strong> publicaciones</span>
+</div>
+<nav aria-label="Navegación de páginas" class="flex items-center gap-1">
+<!-- Botón Anterior Deshabilitado -->
+<button aria-label="Página anterior" class="h-9 px-3 rounded-lg flex items-center justify-center text-ink-400 bg-surface-alt cursor-not-allowed transition-colors text-body-sm" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+<span class="hidden sm:inline ml-1 font-body-sm">Anterior</span>
+</button>
+<!-- Páginas -->
+<button aria-current="page" class="w-9 h-9 rounded-lg flex items-center justify-center bg-brand-700 text-surface font-body-sm-semibold text-body-sm-semibold shadow-sm transition-colors">
+          1
+        </button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-ink-900 hover:bg-brand-50 font-body-sm-semibold text-body-sm-semibold transition-colors" onclick="changePage(2)">
+          2
+        </button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-ink-900 hover:bg-brand-50 font-body-sm-semibold text-body-sm-semibold transition-colors" onclick="changePage(3)">
+          3
+        </button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-ink-900 hover:bg-brand-50 font-body-sm-semibold text-body-sm-semibold transition-colors hidden sm:flex" onclick="changePage(4)">
+          4
+        </button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-ink-900 hover:bg-brand-50 font-body-sm-semibold text-body-sm-semibold transition-colors hidden sm:flex" onclick="changePage(5)">
+          5
+        </button>
+<!-- Botón Siguiente -->
+<button aria-label="Página siguiente" class="h-9 px-3 rounded-lg flex items-center justify-center text-ink-900 hover:bg-brand-50 border border-line transition-colors text-body-sm" onclick="changePage(2)">
+<span class="hidden sm:inline mr-1 font-body-sm">Siguiente</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</nav>
+</div>
+</section>
+<!-- Interactive JavaScript for CMS Client Controls -->
+<script>
+    let toastTimeout;
+
+    function showToast(message, isSuccess = true) {
+      const toast = document.getElementById('toastNotification');
+      const msg = document.getElementById('toastMessage');
+      const icon = document.getElementById('toastIcon');
+
+      clearTimeout(toastTimeout);
+
+      msg.innerText = message;
+      if (isSuccess) {
+        toast.className = toast.className.replace(/border-danger-700/g, '').replace(/border-warning-700/g, '') + ' border-accent-700';
+        icon.className = 'material-symbols-outlined text-accent-700 text-[20px]';
+        icon.innerText = 'check_circle';
+      } else {
+        toast.className = toast.className.replace(/border-accent-700/g, '') + ' border-danger-700';
+        icon.className = 'material-symbols-outlined text-danger-700 text-[20px]';
+        icon.innerText = 'error';
+      }
+
+      toast.classList.remove('hidden', 'translate-y-2');
+      toast.classList.add('translate-y-0');
+
+      toastTimeout = setTimeout(() => {
+        dismissToast();
+      }, 4000);
+    }
+
+    function dismissToast() {
+      const toast = document.getElementById('toastNotification');
+      toast.classList.add('hidden', 'translate-y-2');
+      toast.classList.remove('translate-y-0');
+    }
+
+    function confirmDelete(button, title) {
+      if (confirm(`¿Estás seguro de eliminar la publicación "${title}"? Esta acción no se puede deshacer.`)) {
+        const row = button.closest('tr');
+        row.style.opacity = '0.3';
+        row.style.pointerEvents = 'none';
+        setTimeout(() => {
+          row.remove();
+          showToast(`"${title}" ha sido eliminada.`, false);
+        }, 300);
+      }
+    }
+
+    function togglePublish(button, title) {
+      showToast(`Estado de "${title}" cambiado a Borrador.`);
+      const row = button.closest('tr');
+      const badge = row.querySelector('td:nth-child(6) span');
+      if (badge) {
+        badge.className = 'inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-warning-50 text-warning-700';
+        badge.innerText = 'Borrador';
+      }
+    }
+
+    function publishDraft(button, title) {
+      showToast(`"${title}" ha sido publicada exitosamente.`);
+      const row = button.closest('tr');
+      const badge = row.querySelector('td:nth-child(6) span');
+      if (badge) {
+        badge.className = 'inline-flex items-center px-2 py-0.5 rounded text-caption font-semibold bg-accent-100 text-success-text';
+        badge.innerText = 'Publicado';
+      }
+    }
+
+    function changePage(pageNum) {
+      showToast(`Cargando página ${pageNum}...`);
+    }
+
+    // Reset Filters Functionality
+    document.getElementById('btnResetFilters')?.addEventListener('click', () => {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('filterEstado').value = 'todos';
+      document.getElementById('filterCategoria').value = 'todas';
+      document.getElementById('filterDepartamento').value = 'todos';
+      showToast('Filtros restablecidos.');
+    });
+
+    // Real-time table filter demo
+    document.getElementById('searchInput')?.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const rows = document.querySelectorAll('#newsTableBody tr');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+  </script>
+</div></div></main></div></body></html>

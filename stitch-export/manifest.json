@@ -1,0 +1,133 @@
+{
+  "projectId": "14921403100817785323",
+  "title": "Diseño Web Markdown",
+  "exportedAt": "2026-09-21T00:24:30.383Z",
+  "screens": [
+    {
+      "id": "11162008934687650888",
+      "title": "UI_UX_SPEC.md",
+      "mimeType": "text/markdown",
+      "file": "01-UI-UX-SPEC-md.md"
+    },
+    {
+      "id": "7210a61dd8534f39892ce0d8f45143e3",
+      "title": "A-04 · Panel de noticias",
+      "mimeType": "text/html",
+      "file": "02-A-04-Panel-de-noticias.html"
+    },
+    {
+      "id": "969bbbda0f1541618ca8c1c32547b22b",
+      "title": "P-08 · Pantallas de Error (404, 403, 500)",
+      "mimeType": "text/html",
+      "file": "03-P-08-Pantallas-de-Error-404-403-500.html"
+    },
+    {
+      "id": "eb8dde4dba06454b89d38216f862f3d6",
+      "title": "A-07 · Categorías",
+      "mimeType": "text/html",
+      "file": "04-A-07-Categor-as.html"
+    },
+    {
+      "id": "3c0fd2e7b7bb462b93f073a3f85f0ae2",
+      "title": "A-08 · Departamentos",
+      "mimeType": "text/html",
+      "file": "05-A-08-Departamentos.html"
+    },
+    {
+      "id": "eb531d00959d474eb7de591cabcaf486",
+      "title": "A-02 · Editar perfil",
+      "mimeType": "text/html",
+      "file": "06-A-02-Editar-perfil.html"
+    },
+    {
+      "id": "dc2a76bd2aa846eca088ea03d1cc0796",
+      "title": "A-05 · Crear y editar publicación",
+      "mimeType": "text/html",
+      "file": "07-A-05-Crear-y-editar-publicaci-n.html"
+    },
+    {
+      "id": "8624b4a0a9a74360a3f7c3c27fc4af15",
+      "title": "P-06 · Iniciar sesión",
+      "mimeType": "text/html",
+      "file": "08-P-06-Iniciar-sesi-n.html"
+    },
+    {
+      "id": "3279a10730be4e219f498ed9823cb7c8",
+      "title": "A-00 · Dashboard administrativo",
+      "mimeType": "text/html",
+      "file": "09-A-00-Dashboard-administrativo.html"
+    },
+    {
+      "id": "3819e8770d7f425b837eb84df6044142",
+      "title": "P-02 · Listado de noticias (Rediseñado con Cards)",
+      "mimeType": "text/html",
+      "file": "10-P-02-Listado-de-noticias-Redise-ado-con-Cards.html"
+    },
+    {
+      "id": "b6530a120a494304b3209259e1e42396",
+      "title": "Logo CANACO SERVYTUR Villahermosa",
+      "mimeType": "image/svg+xml",
+      "file": "11-Logo-CANACO-SERVYTUR-Villahermosa.svg"
+    },
+    {
+      "id": "4842e40cf1f145bfbbdac74011d6a64f",
+      "title": "P-07 · Registro",
+      "mimeType": "text/html",
+      "file": "12-P-07-Registro.html"
+    },
+    {
+      "id": "67af765ee7fe4cf3af8e34c38005ec62",
+      "title": "A-01 · Mi perfil",
+      "mimeType": "text/html",
+      "file": "13-A-01-Mi-perfil.html"
+    },
+    {
+      "id": "800c957fbdee4b9880b5ab81417f9479",
+      "title": "A-09 · Usuarios",
+      "mimeType": "text/html",
+      "file": "14-A-09-Usuarios.html"
+    },
+    {
+      "id": "b3e8b70beb7d41c5bb04229cb99e2fd2",
+      "title": "A-06 · Comentarios",
+      "mimeType": "text/html",
+      "file": "15-A-06-Comentarios.html"
+    },
+    {
+      "id": "2336107d6d3f490b9472f7dad5df0c89",
+      "title": "A-03 · Cambiar contraseña",
+      "mimeType": "text/html",
+      "file": "16-A-03-Cambiar-contrase-a.html"
+    },
+    {
+      "id": "53aab36af4a34e1ca74deb1cb0c1ab56",
+      "title": "P-03 · Noticias por categoría",
+      "mimeType": "text/html",
+      "file": "17-P-03-Noticias-por-categor-a.html"
+    },
+    {
+      "id": "a359a338eaea473593f3ba2693ce4b88",
+      "title": "P-05 · Resultados de búsqueda",
+      "mimeType": "text/html",
+      "file": "18-P-05-Resultados-de-b-squeda.html"
+    },
+    {
+      "id": "7c35fae5ed5a42ce97d18dce9a78448a",
+      "title": "P-04 · Detalle de noticia",
+      "mimeType": "text/html",
+      "file": "19-P-04-Detalle-de-noticia.html"
+    },
+    {
+      "id": "6cbe1e444ce04b90b9599e88d3eac6d2",
+      "title": "A-10 · Crear y editar usuario",
+      "mimeType": "text/html",
+      "file": "20-A-10-Crear-y-editar-usuario.html"
+    },
+    {
+      "id": "9feff14d80b249aab77af84bcb8a106b",
+      "title": "P-01 · Home (Rediseñado con Cards)",
+      "mimeType": "text/html",
+      "file": "21-P-01-Home-Redise-ado-con-Cards.html"
+    }
+  ]
+}

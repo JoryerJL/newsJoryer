@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#005144", "success-700": "#3a7d6f", "tertiary": "#005245", "outline-variant": "#bfc8cb", "on-secondary": "#ffffff", "background": "#f2fbff", "surface-variant": "#d0e6ef", "ink-600": "#5a7784", "line": "#dfe6ea", "accent-700": "#3a7d6f", "surface-bright": "#f2fbff", "on-tertiary-fixed": "#00201a", "on-tertiary-container": "#92ead5", "ink-900": "#1a2e35", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#00201a", "on-background": "#091e25", "tertiary-fixed": "#9af3de", "on-surface-variant": "#40484b", "on-tertiary-fixed-variant": "#005144", "on-primary": "#ffffff", "brand-700": "#2b6777", "surface-alt": "#f2f2f2", "surface-container-low": "#e4f7ff", "on-primary-fixed": "#001f27", "tertiary-container": "#006c5c", "on-surface": "#091e25", "success-text": "#2a5d52", "on-primary-fixed-variant": "#044e5d", "danger-700": "#c0392b", "primary-fixed": "#b2ecfe", "on-error-container": "#93000a", "brand-900": "#1f4d59", "primary-container": "#2b6777", "on-secondary-container": "#296d60", "accent-500": "#52ab98", "surface": "#ffffff", "error": "#ba1a1a", "surface-container-high": "#d6ecf5", "surface-container-highest": "#d0e6ef", "outline": "#70787c", "info-50": "#eef4f8", "secondary-container": "#a9eddc", "surface-tint": "#2a6676", "on-primary-container": "#aae3f6", "inverse-primary": "#96cfe1", "brand-50": "#eef4f8", "info-700": "#2b6777", "accent-100": "#e7f4f0", "on-error": "#ffffff", "tertiary-fixed-dim": "#7ed6c2", "primary-fixed-dim": "#96cfe1", "brand-100": "#c8d8e4", "success-50": "#e7f4f0", "error-container": "#ffdad6", "primary": "#074f5e", "inverse-on-surface": "#def4fe", "surface-container": "#dcf1fb", "secondary": "#23695c", "warning-700": "#8a5a00", "danger-text": "#8e2a20", "surface-table-zebra": "#fafbfc", "warning-50": "#fdf4e3", "ink-400": "#9aacb5", "secondary-fixed-dim": "#90d3c3", "inverse-surface": "#1f333a", "surface-dim": "#c8dee7", "danger-50": "#fdecea", "brand-500": "#4a8496", "secondary-fixed": "#acf0df" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1.5rem", "margin": "1.5rem" }, "fontFamily": { "body-sm-semibold": [ "Inter" ], "h4": [ "Inter" ], "h3": [ "\"Source Serif 4\"" ], "display-mobile": [ "\"Source Serif 4\"" ], "overline": [ "Inter" ], "display": [ "\"Source Serif 4\"" ], "h1-mobile": [ "\"Source Serif 4\"" ], "h1": [ "\"Source Serif 4\"" ], "h2": [ "\"Source Serif 4\"" ], "body-semibold": [ "Inter" ], "caption": [ "Inter" ], "body-lg-lead": [ "Inter" ], "body": [ "Inter" ], "body-lg": [ "Inter" ], "body-sm": [ "Inter" ] }, "fontSize": { "body-sm-semibold": [ "14px", { "lineHeight": "1.5", "fontWeight": "600" } ], "h4": [ "18px", { "lineHeight": "1.4", "fontWeight": "600" } ], "h3": [ "22px", { "lineHeight": "1.3", "fontWeight": "600" } ], "display-mobile": [ "32px", { "lineHeight": "1.2", "fontWeight": "700" } ], "overline": [ "12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600" } ], "display": [ "48px", { "lineHeight": "1.1", "fontWeight": "700" } ], "h1-mobile": [ "28px", { "lineHeight": "1.25", "fontWeight": "700" } ], "h1": [ "36px", { "lineHeight": "1.2", "fontWeight": "700" } ], "h2": [ "28px", { "lineHeight": "1.25", "fontWeight": "600" } ], "body-semibold": [ "16px", { "lineHeight": "1.6", "fontWeight": "600" } ], "caption": [ "12px", { "lineHeight": "1.4", "fontWeight": "500" } ], "body-lg-lead": [ "18px", { "lineHeight": "1.7", "fontWeight": "500" } ], "body": [ "16px", { "lineHeight": "1.6", "fontWeight": "400" } ], "body-lg": [ "18px", { "lineHeight": "1.7", "fontWeight": "400" } ], "body-sm": [ "14px", { "lineHeight": "1.5", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body text-on-surface"><aside class="fixed left-0 top-0 h-screen w-[240px] bg-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-low"><div class="w-2 h-2 rounded-full bg-accent-700"></div><span class="font-overline text-overline uppercase text-ink-900 tracking-wider">CMS Editorial</span></div><nav class="flex flex-col gap-space-xs p-space-sm" data-active-classes="bg-primary-container text-on-primary font-body-sm-semibold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs font-overline text-overline uppercase text-ink-600">Publicaciones</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="noticias" href="#"><span class="material-symbols-outlined text-[20px]">article</span><span>Noticias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="comentarios" href="#"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span>Comentarios</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="categorias" href="#"><span class="material-symbols-outlined text-[20px]">category</span><span>Categorías</span></a><div class="px-space-sm pt-space-md pb-space-xs font-overline text-overline uppercase text-ink-600">Estructura &amp; Control</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="departamentos" href="#"><span class="material-symbols-outlined text-[20px]">apartment</span><span>Departamentos</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-colors bg-primary-container text-on-primary font-body-sm-semibold rounded-lg" data-path="usuarios" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span>Usuarios</span></a><div class="px-space-sm pt-space-md pb-space-xs font-overline text-overline uppercase text-ink-600">Cuenta</div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mi-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi perfil</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cambiar-contrasena" href="#"><span class="material-symbols-outlined text-[20px]">password</span><span>Cambiar contraseña</span></a></nav></div><div class="p-space-sm bg-surface-container-lowest"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-body-sm text-body-sm text-danger-700 hover:bg-danger-50 hover:text-danger-text transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Cerrar sesión</span></a></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #2b6777
+- Font: sourceSerif4
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V__GykfvCvI5_ZF2Y01XkNnFHY32sWY3pejWBLBpvKlcTTN0W78BquXPW-GPQb5Jp30b_F4snyQ3f_1PzE_6AwzY4rpiDcvfVjKRhhEMqwwcxytcMQm6DcYEVfaqeiEorDQ7pd1kRM6iTc3LcZLRRWhI8KalacOyV213rwmp4Y63UStjvKcfvvoT9NTMZIARsdkIcRfbb1A9g3JxnRfbq0hNZuj9NoMZ2510p_u0ouNg"/><div class="flex flex-col"><span class="font-h4 text-h4 text-ink-900 leading-tight">CANACO SERVYTUR</span><span class="font-caption text-caption text-ink-600">Villahermosa · Panel Administrativo</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-accent-100"><span class="w-2 h-2 rounded-full bg-accent-700 animate-pulse"></span><span class="font-caption text-caption text-success-text">Sistema En Línea</span></div><a class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-primary font-body-sm-semibold text-body-sm-semibold hover:bg-surface-container-high hover:text-ink-900 transition-colors" data-path="portal-publico" href="#"><span class="material-symbols-outlined text-[18px]">open_in_new</span><span>Ver portal público</span></a><div class="flex items-center gap-space-sm pl-space-md"><div class="flex flex-col text-right hidden sm:flex"><span class="font-body-sm-semibold text-body-sm-semibold text-ink-900">María López</span><span class="font-caption text-caption text-ink-600">Administrador</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V1mp0M_-HhAYwf5nSnTlzpcRj5gUh4hjSXuCtxy0XVecr_xqd4dRIptF-L5pFbgCwXw3IgeuPGwt0ibU5wE9cCMauHOQ_vkGQXNYLsk0k2EFIqOykVaPelcVjFOAl_-FYLW_q4aLQ8_eYZkWTc_wrG0woEnak5GAKtFcinh2-IGNqVPHlAv7G9C9gvwBeCDhNW-lVxsh7ajVaZRNAVMZr45WOY5sdFCIivNs53k5Oo7w"/></div></div></header><main class="relative pt-16 w-full bg-background"><div class="flex flex-col w-full">
+<div class="w-full px-gutter py-space-lg flex flex-col gap-space-xl max-w-[1440px] mx-auto">
+<!-- Encabezado y Acciones Principales -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<!-- Migas de Pan -->
+<nav aria-label="Migas de pan" class="flex items-center gap-space-xs text-ink-600 font-caption text-caption mb-1">
+<span class="hover:text-brand-700 cursor-pointer transition-colors">Panel</span>
+<span class="text-outline-variant select-none">›</span>
+<span class="hover:text-brand-700 cursor-pointer transition-colors">Administración</span>
+<span class="text-outline-variant select-none">›</span>
+<span class="text-ink-900 font-body-sm-semibold select-none">Usuarios</span>
+</nav>
+<!-- Título e Identificador Normativo -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<h2 class="font-h2 text-h2 text-ink-900 font-bold tracking-tight">Usuarios</h2>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-overline text-overline uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-700"></span>
+            A-09 · Control de Accesos y Roles
+          </span>
+</div>
+<p class="font-body text-body text-ink-600 max-w-3xl">
+          Administra las cuentas del personal editorial, afiliados lectores y permisos de acceso al sistema institucional.
+        </p>
+</div>
+<!-- Botón de Acción Principal (+ Crear Usuario / Enlace A-10) -->
+<div class="flex items-center gap-space-sm self-start lg:self-auto">
+<a class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-brand-700 hover:bg-brand-900 text-surface font-body-semibold text-body-semibold shadow-sm hover:shadow-md transition-all" data-path="crear-usuario" href="#">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>Crear usuario</span>
+</a>
+</div>
+</div>
+<!-- Métricas Rápidas de Cuentas Institucionales -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Tarjeta 1: Total -->
+<div class="p-space-lg rounded-xl bg-surface shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-3 -bottom-3 text-surface-container opacity-60 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[96px]">groups</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase text-ink-600 font-semibold tracking-wider">Total Usuarios</span>
+<span class="p-1.5 rounded-lg bg-brand-50 text-brand-700">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="font-display text-display text-ink-900 font-bold tabular-nums">18</div>
+<p class="font-caption text-caption text-ink-600 mt-1 flex items-center gap-1">
+<span class="inline-block w-2 h-2 rounded-full bg-accent-700"></span>
+            Registrados en el padrón
+          </p>
+</div>
+</div>
+<!-- Tarjeta 2: Administradores -->
+<div class="p-space-lg rounded-xl bg-surface shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-3 -bottom-3 text-surface-container opacity-60 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[96px]">admin_panel_settings</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase text-ink-600 font-semibold tracking-wider">Administradores</span>
+<span class="p-1.5 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="font-display text-display text-ink-900 font-bold tabular-nums">2</div>
+<p class="font-caption text-caption text-success-text mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Activos con acceso total
+          </p>
+</div>
+</div>
+<!-- Tarjeta 3: Editores & Colaboradores -->
+<div class="p-space-lg rounded-xl bg-surface shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-3 -bottom-3 text-surface-container opacity-60 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[96px]">history_edu</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase text-ink-600 font-semibold tracking-wider">Mesa Editorial</span>
+<span class="p-1.5 rounded-lg bg-accent-100 text-accent-700">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="font-display text-display text-ink-900 font-bold tabular-nums">7</div>
+<p class="font-caption text-caption text-ink-600 mt-1">
+            3 Editores + 4 Colaboradores
+          </p>
+</div>
+</div>
+<!-- Tarjeta 4: Lectores Afiliados -->
+<div class="p-space-lg rounded-xl bg-surface shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-3 -bottom-3 text-surface-container opacity-60 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[96px]">local_library</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-overline text-overline uppercase text-ink-600 font-semibold tracking-wider">Lectores Afiliados</span>
+<span class="p-1.5 rounded-lg bg-surface-alt text-ink-600">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="font-display text-display text-ink-900 font-bold tabular-nums">9</div>
+<p class="font-caption text-caption text-ink-600 mt-1">
+            Cuentas empresariales afiliadas
+          </p>
+</div>
+</div>
+</div>
+<!-- Barra de Filtros, Búsqueda y Control de Vista (§6.10) -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Búsqueda rápida -->
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-ink-400 text-[20px] select-none">search</span>
+<input class="w-full h-10 pl-10 pr-space-md rounded-lg bg-surface-alt hover:bg-surface focus:bg-surface text-ink-900 font-body-sm text-body-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-700" id="user-search-input" placeholder="Buscar por nombre, @usuario o correo..." type="text"/>
+</div>
+<!-- Filtros Selectores -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Filtro Rol -->
+<div class="relative min-w-[170px]">
+<select aria-label="Filtrar por Rol" class="w-full h-10 px-space-md pr-8 rounded-lg bg-surface-alt text-ink-900 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-brand-700 cursor-pointer appearance-none">
+<option value="">Todos los roles</option>
+<option value="admin">Administrador</option>
+<option value="editor">Editor</option>
+<option value="colab">Colaborador</option>
+<option value="lector">Lector Afiliado</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-ink-400 pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Filtro Estado -->
+<div class="relative min-w-[170px]">
+<select aria-label="Filtrar por Estado" class="w-full h-10 px-space-md pr-8 rounded-lg bg-surface-alt text-ink-900 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-brand-700 cursor-pointer appearance-none">
+<option value="">Todos los estados</option>
+<option value="activo">Activos</option>
+<option value="inactivo">Inactivos / Bloqueados</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-ink-400 pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Botón Restablecer Filtros -->
+<button class="h-10 px-3 rounded-lg text-ink-600 hover:text-brand-700 hover:bg-brand-50 font-body-sm-semibold text-body-sm-semibold flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Restablecer</span>
+</button>
+</div>
+</div>
+<!-- Resumen de Conteo de Resultados Activos -->
+<div class="flex items-center justify-between pt-space-xs text-ink-600 font-caption text-caption">
+<div class="flex items-center gap-space-xs">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-accent-500"></span>
+<span>Mostrando <strong>5</strong> de <strong>18</strong> cuentas registradas en el CMS</span>
+</div>
+<span class="hidden sm:inline text-ink-400 font-mono text-[11px]">Directorio actualizado hace 3 min</span>
+</div>
+</div>
+<!-- Contenedor Tabla de Usuarios (§6.10, §2.6) -->
+<div class="bg-surface rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-ink-900">
+<th class="py-3.5 px-space-md font-body-sm-semibold text-body-sm-semibold w-[50px] text-center" scope="col">#</th>
+<th class="py-3.5 px-space-md font-body-sm-semibold text-body-sm-semibold min-w-[240px]" scope="col">Usuario / Nombre</th>
+<th class="py-3.5 px-space-md font-body-sm-semibold text-body-sm-semibold min-w-[220px]" scope="col">Correo Institucional / Personal</th>
+<th class="py-3.5 px-space-md font-body-sm-semibold text-body-sm-semibold min-w-[140px]" scope="col">Rol Asignado</th>
+<th class="py-3.5 px-space-md font-body-sm-semibold text-body-sm-semibold min-w-[130px]" scope="col">Registro</th>
+<th class="py-3.5 px-space-md font-body-sm-semibold text-body-sm-semibold min-w-[120px]" scope="col">Estado</th>
+<th class="py-3.5 px-space-md font-body-sm-semibold text-body-sm-semibold text-right min-w-[160px]" scope="col">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Fila 1: Administrador en sesión activa (María López) - RN-M6-05 -->
+<tr class="bg-brand-50 hover:bg-surface-container-high transition-colors">
+<td class="py-3.5 px-space-md font-mono text-caption text-ink-600 text-center font-bold">01</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm ring-2 ring-primary" data-alt="Close-up institutional executive headshot of Maria Lopez, mid-thirties Mexican woman with warm corporate smile, wearing dark teal blazer in a bright modern office with soft daylight and clean neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Ltw3Eo0tIUDpVB7ImcoH8M4WZHBtcenZXVK9dmNq7Buew9gSzhwGN12XDuXrUmT_3nKfxIgKakK_cHTtJMUrh1TvJF37yPSVvkag1R9yBqbKXRMHmf9HUzdwYjwswpCgAJ_CPcsIskg6Jh6Ls8PoP7aTaZ4OOjv2xR5S6MXrFRnnP9zJ9VY17YLt74Y0TE7AEbEmFlkd0GnThwELtJmAU5yLaxcZptpt_16OLRUsHSI616d2Wkc87A"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-accent-700 ring-2 ring-surface"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-semibold text-body-sm-semibold text-ink-900 truncate">María López</span>
+<span class="px-1.5 py-0.2 rounded bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider">(Tú)</span>
+</div>
+<span class="font-caption text-caption text-ink-600">@m.lopez.admin</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 text-ink-600">
+<span class="material-symbols-outlined text-[16px] text-brand-700">mail</span>
+<span class="truncate">m.lopez@canacovillahermosa.mx</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-brand-900 font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">admin_panel_settings</span>
+                  Administrador
+                </span>
+</td>
+<td class="py-3.5 px-space-md font-caption text-caption text-ink-600">
+                14 Ene 2023
+              </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-100 text-success-text font-caption text-caption font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-700"></span>
+                  Activo
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-1.5">
+<a class="p-1.5 rounded-lg text-ink-600 hover:text-brand-700 hover:bg-surface transition-colors" href="#" title="Editar tu perfil">
+<span class="material-symbols-outlined text-[19px]">edit</span>
+</a>
+<!-- Deshabilitado por RN-M6-05 -->
+<div class="relative group">
+<button aria-label="No puedes bloquear tu propia cuenta" class="p-1.5 rounded-lg text-outline-variant cursor-not-allowed bg-transparent" disabled="" type="button">
+<span class="material-symbols-outlined text-[19px]">block</span>
+</button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-30 w-52 p-2 rounded-lg bg-ink-900 text-surface text-[11px] shadow-lg leading-snug text-left">
+<strong>Regla RN-M6-05:</strong> No puedes auto-bloquear ni revocar tus propios privilegios activos.
+                    </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Fila 2: Segundo Administrador (Lic. Roberto Cantón) - RN-M6-06 -->
+<tr class="hover:bg-surface-table-zebra transition-colors">
+<td class="py-3.5 px-space-md font-mono text-caption text-ink-600 text-center">02</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Professional portrait photograph of Lic. Roberto Canton, 45-year-old Mexican executive in bespoke navy suit, confident expression with soft corporate chamber boardroom background in Tabasco." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUoS9MzGhO3w6GvzOVy7UTppa_Uz_jvDF6BVI4wFAceI9arllmXDNU50DNjaRHZLWM9K5BZjJxrb1_ZHnFdh3qANLER0JLcoFdkujgCG74ZOoO4qvva3CjXe6LAUxeicFVhcc3AxIDTi6-91b1kg1TqIyjSX90QDgpgSGhRnysavc4NJUJ1IGrHZqV_ZQrNm3fxjQAK8nxiSwhxi3tA8IBrvQ_xqU9OXPcRtUY3BstR8EKNaxs1nm5FA"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-accent-700 ring-2 ring-surface"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-semibold text-body-sm-semibold text-ink-900 truncate">Lic. Roberto Cantón</span>
+<span class="font-caption text-caption text-ink-600">@rcanton.consejo</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 text-ink-600">
+<span class="material-symbols-outlined text-[16px] text-brand-700">mail</span>
+<span class="truncate">r.canton@canacovillahermosa.mx</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-brand-900 font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">admin_panel_settings</span>
+                  Administrador
+                </span>
+</td>
+<td class="py-3.5 px-space-md font-caption text-caption text-ink-600">
+                02 Feb 2023
+              </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-100 text-success-text font-caption text-caption font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-700"></span>
+                  Activo
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-1.5">
+<button class="p-1.5 rounded-lg text-ink-600 hover:text-brand-700 hover:bg-surface-container transition-colors" title="Editar cuenta" type="button">
+<span class="material-symbols-outlined text-[19px]">edit</span>
+</button>
+<!-- Deshabilitado o con advertencia RN-M6-06 -->
+<div class="relative group">
+<button aria-label="Protegido por regla de administrador mínimo" class="p-1.5 rounded-lg text-warning-700 hover:bg-warning-50 transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">lock_person</span>
+</button>
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:block z-30 w-56 p-2 rounded-lg bg-ink-900 text-surface text-[11px] shadow-lg leading-snug text-left">
+<strong>Regla RN-M6-06:</strong> Debe existir al menos un administrador secundario activo de respaldo institucional.
+                    </div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Fila 3: Editora Titular (Mtra. Carmen Priego) -->
+<tr class="hover:bg-surface-table-zebra transition-colors">
+<td class="py-3.5 px-space-md font-mono text-caption text-ink-600 text-center">03</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Editorial portrait of Carmen Priego, 38-year-old Latina journalist and editor, smiling warmly with stylish glasses in a sunlit journalism newsroom setting with books and news archives behind her." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNsdcfFN0PahowsSOdg6VbCK8YW0Bazs0fyu83vD7bVoZlT6DIYk7Hb9OapSK2fiSmOldJaFpteByFbDu8ELp0lYpubzyxxjbS41d-WlgiN-fy2DJdSaccLrEJazoRr1xuNKgnPjibi3IOe9SOwoI_XY-FfDj1BI3sat1zEmvCcsW3L0nInMlhRJTdoFprYFpsNkE-DS3wYQUvO8aY4gRxBTbC0LmlimLWNFyF66I2wuCCrEirb-yG-w"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-accent-700 ring-2 ring-surface"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-semibold text-body-sm-semibold text-ink-900 truncate">Mtra. Carmen Priego</span>
+<span class="font-caption text-caption text-ink-600">@cpriego.editorial</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 text-ink-600">
+<span class="material-symbols-outlined text-[16px] text-brand-700">mail</span>
+<span class="truncate">carmen.priego@redaccion-canaco.mx</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-accent-100 text-accent-700 font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">rate_review</span>
+                  Editor
+                </span>
+</td>
+<td class="py-3.5 px-space-md font-caption text-caption text-ink-600">
+                18 Mar 2023
+              </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-100 text-success-text font-caption text-caption font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-700"></span>
+                  Activo
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-1.5">
+<button class="p-1.5 rounded-lg text-ink-600 hover:text-brand-700 hover:bg-surface-container transition-colors" title="Editar privilegios y departamento" type="button">
+<span class="material-symbols-outlined text-[19px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-danger-700 hover:bg-danger-50 transition-colors" title="Bloquear cuenta de editor" type="button">
+<span class="material-symbols-outlined text-[19px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 4: Colaborador de Redacción (Ing. Salvador Moreno) -->
+<tr class="hover:bg-surface-table-zebra transition-colors">
+<td class="py-3.5 px-space-md font-mono text-caption text-ink-600 text-center">04</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center font-bold text-caption shadow-sm">
+                    SM
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-semibold text-body-sm-semibold text-ink-900 truncate">Ing. Salvador Moreno</span>
+<span class="font-caption text-caption text-ink-600">@smoreno.comunicacion</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 text-ink-600">
+<span class="material-symbols-outlined text-[16px] text-brand-700">mail</span>
+<span class="truncate">salvador.m@servytur-prensa.org</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-brand-50 text-brand-900 font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">article</span>
+                  Colaborador
+                </span>
+</td>
+<td class="py-3.5 px-space-md font-caption text-caption text-ink-600">
+                05 May 2023
+              </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-100 text-success-text font-caption text-caption font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-700"></span>
+                  Activo
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-1.5">
+<button class="p-1.5 rounded-lg text-ink-600 hover:text-brand-700 hover:bg-surface-container transition-colors" title="Editar cuenta" type="button">
+<span class="material-symbols-outlined text-[19px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-danger-700 hover:bg-danger-50 transition-colors" title="Bloquear cuenta" type="button">
+<span class="material-symbols-outlined text-[19px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 5: Lector Afiliado Bloqueado / Inactivo (Carlos Mendoza) - RN-M6-04 -->
+<tr class="opacity-70 bg-surface-alt/60 hover:opacity-90 hover:bg-surface-alt transition-all">
+<td class="py-3.5 px-space-md font-mono text-caption text-ink-400 text-center">05</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-variant text-ink-600 flex items-center justify-center font-bold text-caption grayscale shadow-sm">
+                    CM
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-semibold text-body-sm-semibold text-ink-900 line-through decoration-ink-400 truncate">Carlos Mendoza V.</span>
+<span class="font-caption text-caption text-ink-600">@cmendoza.afiliado</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5 text-ink-600">
+<span class="material-symbols-outlined text-[16px] text-ink-400">mail</span>
+<span class="truncate">carlos.mendoza@comercio-vhsa.com</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-ink-600 font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                  Lector
+                </span>
+</td>
+<td class="py-3.5 px-space-md font-caption text-caption text-ink-400">
+                12 Ago 2023
+              </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-variant text-ink-600 font-caption text-caption font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-ink-400"></span>
+                  Inactivo / Bloqueado
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-1.5">
+<button class="p-1.5 rounded-lg text-ink-600 hover:text-brand-700 hover:bg-surface transition-colors" title="Editar expediente" type="button">
+<span class="material-symbols-outlined text-[19px]">edit</span>
+</button>
+<!-- Botón de reactivación / desbloqueo -->
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-accent-100 hover:bg-accent-500 hover:text-surface text-success-text text-caption font-body-sm-semibold transition-colors" title="Reactivar cuenta de usuario" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Reactivar</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginación y Resumen Inferior (§2.7) -->
+<div class="px-space-md py-3.5 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-ink-600 font-caption text-caption">
+<div class="flex items-center gap-1">
+<span>Mostrando <strong>1–5</strong> de <strong>18</strong> usuarios registrados</span>
+</div>
+<!-- Controles de Páginas -->
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-lg bg-surface text-ink-400 cursor-not-allowed text-caption flex items-center gap-1 font-body-sm-semibold" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Anterior</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-brand-700 text-surface font-body-sm-semibold text-caption">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface text-ink-900 font-body-sm-semibold text-caption transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface text-ink-900 font-body-sm-semibold text-caption transition-colors">3</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface text-ink-900 font-body-sm-semibold text-caption transition-colors">4</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface hover:bg-surface-container-high text-ink-900 text-caption flex items-center gap-1 font-body-sm-semibold transition-colors">
+<span>Siguiente</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Banner Informativo de Políticas de Seguridad Institucional (RN-M6) -->
+<div class="p-space-md sm:p-space-lg rounded-xl bg-surface shadow-sm flex flex-col sm:flex-row items-start gap-space-md">
+<div class="p-2.5 rounded-xl bg-surface-container-high text-brand-700 shrink-0">
+<span class="material-symbols-outlined text-[28px]">shield</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-2">
+<h4 class="font-h4 text-h4 text-ink-900 font-bold">Normativa RN-M6: Integridad Institucional y Preservación de Autoría</h4>
+<span class="px-2 py-0.5 rounded bg-brand-50 text-brand-900 font-caption text-caption font-semibold uppercase tracking-wider">Directriz CMS</span>
+</div>
+<p class="font-body text-body-sm text-ink-600 leading-relaxed max-w-4xl">
+          El bloqueo o suspensión de un usuario restringe inmediatamente su inicio de sesión en el sistema editorial pero <strong class="text-ink-900 font-semibold">conserva intactas sus publicaciones, artículos históricos firmados y comentarios aprobados</strong>. Esta medida técnica previene fallas en la hemeroteca pública de la Cámara y asegura la trazabilidad legal del contenido cívico-empresarial de Tabasco.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interacción ligera para filtro de búsqueda en vivo en la tabla
+  document.getElementById('user-search-input')?.addEventListener('input', function(e) {
+    const term = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(term) ? '' : 'none';
+    });
+  });
+</script></main></div></body></html>
